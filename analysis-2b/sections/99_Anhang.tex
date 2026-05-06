@@ -1,0 +1,70 @@
+\section{Anhang}
+\subsection{Approfondimento taylor Reihe}
+
+Questo approccio permette di sviluppare serie di Taylor per funzioni razionali evitando
+il laborioso calcolo di  utilizzando la serie 
+geometrica.
+
+\begin{itemize}
+    \item \textbf{1. Partialbruchzerlegung (PBZ):} Si scompone la funzione frazionaria complessa
+    \begin{equation*}
+        f(x) = \frac{P(x)}{Q(x)} \xrightarrow{PBZ} \frac{A}{ax+b} + \frac{B}{cx+d}
+    \end{equation*}
+
+    \item \textbf{2. Geometrische Reihe:} Invece di usare la formula di Taylor standard,
+    si riconducono i termini alla forma chiusa della serie geometrica, della quale 
+    conosciamo già lo sviluppo:
+    \begin{equation*}
+        \frac{1}{1-\cor{q}} = \sum_{n=0}^{\infty} \cor{q}^n
+    \end{equation*}
+
+    \item \textbf{3. Normalizzazione del Denominatore:} Si manipolano i fratti raccogliendo le costanti a denominatore per ottenere esattamente un $1$ iniziale, portandoli nella forma standard $\frac{1}{1-q}$.
+    \begin{equation*}
+        \frac{A}{a+bx} = \frac{A}{a} \cdot \frac{1}{1 - \left(-\frac{b}{a}x\right)} \quad \implies \quad \cor{q} = -\frac{b}{a}x
+    \end{equation*}
+
+    \item \textbf{4. Linearità e Vorfaktor:} Le costanti e segni vengono spostati nelle 
+    sommatorie. Se possibile, si uniscono le serie in un'unica sommatoria raccogliendo $x^n$.
+
+    \item \textbf{5. Konvergenzradius ($\rho$):} La serie geometrica converge solo se 
+    $|q| < 1$. 
+    
+    Se la $f$ è composta da più serie, si calcola la condizione di convergenza 
+    per ognuna. Il raggio di convergenza totale è l'intersezione delle condizioni 
+    (\textbf{minimo} raggi)
+\end{itemize}
+
+\subsection*{Cambio di indice nelle sommatorie}
+
+Per traslare l'indice di una sommatoria di una quantità costante $s$, si applica la seguente trasformazione generale:
+
+\begin{equation*}
+\sum_{n=n_0}^{N} a_n \quad \xrightarrow{k = n + s} \quad \sum_{k=n_0+s}^{N+s} a_{k-s}
+\end{equation*}
+
+I passaggi logici sono tre:
+\begin{enumerate}
+    \item \textbf{Nuova variabile}: Si definisce $k = n + s$.
+    \item \textbf{Nuovi limiti}: Il limite inferiore diventa $k_{start} = n_0 + s$ e quello superiore $k_{end} = N + s$.
+    \item \textbf{Sostituzione}: Si esprime $n$ in funzione di $k$ ($n = k - s$) e si sostituisce in ogni occorrenza all'interno dell'argomento.
+\end{enumerate}
+
+\paragraph{Esempio pratico:}
+\begin{equation*}
+\sum_{n=0}^{\infty} \frac{x^{n+1}}{(n+1)^2} \quad \xrightarrow{k = n + 1} \quad \sum_{k=1}^{\infty} \frac{x^k}{k^2}
+\end{equation*}
+In questo caso, avendo $n = k - 1$, il termine $(n+1)$ diventa semplicemente $k$.
+
+\subsection{Ordine di contatto $n$}
+
+Per determinare l'ordine di contatto $n$ in un punto $x_0$ tra due funzioni $f(x)$ e $g(x)$, è possibile sviluppare entrambe in \textbf{serie di Taylor} (o serie di potenze) e confrontare i rispettivi coefficienti $a_k$.
+
+Due funzioni hanno un contatto di ordine $n$ se:
+
+i primi $n+1$ coefficienti delle loro serie sono identici.
+
+\textbf{Nota bene:} 
+\begin{itemize}
+    \item I coefficienti nulli (\(a_k = 0\)) sono fondamentali e vanno conteggiati nel confronto.
+    \item Il primo coefficiente differente determina dove il contatto si "rompe".
+\end{itemize}

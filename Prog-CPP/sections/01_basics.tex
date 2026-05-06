@@ -1,0 +1,123 @@
+\section{Basics}
+
+\subsection{Grundsätzlich}
+
+C++ ist sehr ähnlich zu C. Es gibt aber einige wichtige Änderungen zu C:
+
+\begin{itemize}[itemsep=1pt, parsep=0pt]
+    \item zu benutzender Compiler heisst jetzt \texttt{clang++}
+    \item Nativen Bool Typ : \textbf{bool}
+    \item richtiges Konstanten Schlüsselwort : \textbf{constexpr}
+    \item Standartbibliotheken haben kein .h mehr beim Aufrufen
+    \item C Standartbibliotheken können weiter verwendet werden, haben aber ein C im Header(stdio.h $\rightarrow$ cstdio)
+    \item Char-Literale (z. B. 'A') haben in C++ den Datentyp char (in C war es int)(Brauchen ein const)
+    \item Es gibt benannte Namensräume. Wichtigster Namensraum für die STL: \texttt{std}
+\end{itemize}
+
+\subsection{Hello world C++}
+
+\lstinputlisting{code/01_basics/hello_World.cpp}
+
+\subsection{Range-based for Loop}\label{forEach}
+
+Range based for Loops laufen automatisch ein Array ab, ohne das zuerst die Grösse ermittelt werden muss. 
+Die C for loop syntax wurde etwas erweitert.
+Syntax:
+
+\lstinputlisting{code/01_basics/forEach.cpp}
+
+Siehe: Als Array Name wird ein \texttt{Pointer} auf das Array verlangt, nicht auf das erste Element!  
+Ein foreach funktioniert \textbf{nicht} mit einem \textbf{Pointerpointer}. 
+
+\subsection{Streams}
+
+Ein Stream repräsentiert einen generischen sequentiellen Datenstrom. Z.b: ein Eingabefeld, Dateien oder Netzwerktraffic.\\
+Die wichtigsten Operatoren sind:
+
+\begin{itemize}[itemsep=1pt, parsep=0pt]
+    \item \verb|<<| : Inserter $\rightarrow$  Daten einfügen
+    \item \verb|>>| :  Extractor $\rightarrow$ Daten herausholen
+\end{itemize}
+
+Für Standardklassen sind diese Operatoren bereits definiert.
+
+\subsubsection*{Standardstreams}
+
+\begin{itemize}[itemsep=1pt, parsep=0pt]
+    \item \textbf{cin} : Standard Eingabe
+    \item \textbf{cout} : Standard Ausgabe
+    \item \textbf{cerr} : Standard Fehlerausgabe, 
+    \item \textbf{clog} : Standard Log Ausgabe, möglicherweise mit cerr gekoppelt 
+\end{itemize}\vspace{0.5em}
+
+\textbf{\texttt{cin}/\texttt{cout} Immer ganz links!}, operatoren klar und lesbar anordnen
+
+\subsubsection{Streamformatierung}
+
+Formatierungen der Streams können mit folgenden Schlüsselwörtern erreicht werden:\vspace{-1em}
+
+\begin{center}
+    \setlength{\tabcolsep}{4pt}
+    \resizebox{\columnwidth}{!}{
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \rowcolor[RGB]{239,239,239} 
+        \textbf{Flag} & \textbf{Wirkung} & \textbf{Gültigkeit} \\ \hline
+        \texttt{boolalpha}     & bool-Werte werden textuell ausgegeben & Dauerhaft \\ \hline
+        \texttt{dec}           & Ausgabe erfolgt dezimal & Dauerhaft \\ \hline
+        \colorbox{yellow!70}{\texttt{fixed}}         & Gleitkommazahlen im Fixpunktformat & Dauerhaft \\ \hline
+        \texttt{hex}           & Ausgabe erfolgt hexadezimal & Dauerhaft \\ \hline
+        \texttt{internal}      & Ausgabe innerhalb Feld & Dauerhaft \\ \hline
+        \texttt{left}          & linksbündig & Dauerhaft \\ \hline
+        \texttt{oct}           & Ausgabe erfolgt oktal & Dauerhaft \\ \hline
+        \texttt{right}         & rechtsbündig & Dauerhaft \\ \hline
+        \texttt{scientific}    & Gleitkommazahl wissenschaftlich & Dauerhaft \\ \hline
+        \texttt{showbase}      & Zahlenbasis wird gezeigt & Dauerhaft \\ \hline
+        \texttt{showpoint}     & Dezimalpunkt wird immer ausgegeben & Dauerhaft \\ \hline
+        \texttt{showpos}       & Vorzeichen bei positiven Zahlen anzeigen & Dauerhaft \\ \hline
+        \texttt{skipws}        & Führende Whitespaces ignorieren & Dauerhaft \\ \hline
+        \texttt{unitbuf}       & Leert Buffer dopo ogni operazione & Dauerhaft \\ \hline
+        \texttt{uppercase}     & Kleinbuchstaben in Grossbuchstaben wandeln & Dauerhaft \\ \hline
+        \rowcolor[RGB]{245,245,245}
+        \multicolumn{3}{|l|}{\textit{\color{orange}Benötigen Header <iomanip>}} \\ \hline
+        \texttt{setw(n)}       & Setzt minimale Feldbreite & Einmalig \\ \hline
+        \texttt{setprecision(n)} & Setzt Anzahl Stellen \colorbox{yellow!70}{(signifikant o. Nachkomma)} & Dauerhaft \\ \hline
+        \texttt{setfill(c)}    & Setzt Füllzeichen (Standard: Leerzeichen) & Dauerhaft \\ \hline
+    \end{tabular}}
+\end{center}
+
+
+\subsection{Namespaces}
+\begin{itemize}
+    \item Namespaces helfen, Namenskonflikte zu verhindern. 
+        Sie fügen ein Namensvorsatz zu allen Variablen. 
+    \item Per ogni Unit (Modul) dovrebbe essere definito un namespace
+    \item \cor{Mit kleine Buchstaben starten}
+    \item namespaces senza nome: evitano uso di \texttt{static} per var. locali
+    \item L'operatore \texttt{::} ritorna sempre la variabile o funz. più globale
+\end{itemize}
+
+\lstinputlisting{code/01_basics/namespace.cpp}
+
+
+\subsection{Kostanten}
+
+\begin{itemize}
+    \item \texttt{\#define} soll nich mehr verwendet werden
+    \item \texttt{constexpr} verwenden!
+    \item \texttt{enum} da usare solo se l'automatismo di $+1$ è utile
+\end{itemize}
+
+
+\subsubsection{Optiemierung \texttt{constexpr}}
+
+\begin{center}
+    \begin{tabular}{ll}
+    \toprule
+    \textbf{Ambito} & \textbf{Sintassi Consigliata} \\
+    \midrule
+    Header file & \texttt{inline constexpr} \\
+    Class or function & \texttt{static constexpr} \\
+    \bottomrule
+\end{tabular}
+\end{center}
