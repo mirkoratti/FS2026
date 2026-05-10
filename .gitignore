@@ -11,6 +11,8 @@
 *.cb
 *.cb2
 .*.lb
+
+OS Specific
 .DS_Store
 
 ## Intermediate documents:
@@ -232,6 +234,7 @@ pythontex-files-*/
 
 # todonotes
 *.tdo
+todo.txt
 
 # vhistory
 *.hst
