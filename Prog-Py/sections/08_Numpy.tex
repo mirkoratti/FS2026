@@ -51,8 +51,9 @@ In \texttt{arange} è possibile inserire uno \texttt{step} negativo, per creare 
      Use \texttt{.copy()} to create an independent duplicate.
      \crd{END not included!}
     \item \textbf{Boolean Slicing}: Extracts subsets where a condition is \texttt{True} (e.g., \texttt{arr[arr > 5]}).
+    \item \textbf{Unpacking}: A matrix can be unpacked directly into its components along 
+    the first axis: \lstinline[language=Python]|row1, row2 = np_matrix|
 \end{itemize}
-
 
 \textbf{Examples:}
 
@@ -90,7 +91,14 @@ To perform operations on arrays of different shapes, NumPy automatically broadca
 \subsubsection{Dimension Changes}
 \lstinputlisting[language=Python]{code/np_dimesnions.py}
 
-Please note: arr.reshape(-1) only creates a view, not an actual copy
+\begin{itemize}
+    \item \textbf{View vs Copy}: \texttt{arr.reshape(-1)} creates a \textbf{view}, not a physical copy. Modifying the reshaped array will affect the original.
+    \item \textbf{Automatic Reshaping}: Using \texttt{-1} allows NumPy to automatically
+    calculate a dimension based on the array's total size.
+    \item \textbf{Compatibility Constraint}: Only one dimension can be set to \texttt{-1}.
+    For a reshape to be valid, the total number of elements $N$ must 
+    be exactly divisible by the product of the specified dimensions.
+\end{itemize}
 
 
 \subsection{Mathematical Functions}
@@ -143,13 +151,46 @@ While both perform standard matrix multiplication for 2D arrays, they behave dif
 
 \cor{Usually always use the \texttt{@} operator}
 \subsubsection{Comparison Example ($n > 2$)}
-\begin{lstlisting}[language=Python]
-a = np.ones((2, 3, 3))
-b = np.ones((2, 3, 3))
+\lstinputlisting[language=Python]{code/comparison_dot.py}
 
-# Result: (2, 3, 3) -> Multiplies stacks independently
-res_matmul = a @ b 
+\subsubsection{Methods}
+The \texttt{np.linalg} module provides essential tools for matrix computations.
 
-# Result: (2, 3, 2, 3) -> Multiplies every row by every column
-res_dot = np.dot(a, b)     
-\end{lstlisting}
+\begin{itemize}
+    \item \textbf{np.linalg.solve(A, b)}: Computes the exact solution of a linear matrix equation $Ax = b$.
+    \begin{itemize}
+        \item  $A$ must be square and of full rank (non-singular).
+    \end{itemize}
+
+    \item \textbf{np.linalg.lstsq(A, b, rcond=None)}: Returns the \textbf{Least-Squares} solution to a linear matrix equation.
+    \begin{itemize}
+        \item \textit{When to use}: When $Ax = b$ has no exact solution 
+        \item \textit{Returns array}: A tuple containing the solution $x$, residuals, rank of $A$, and singular values.
+    \end{itemize}
+
+    \item \textbf{np.linalg.eig(A)}: Computes the eigenvalues and right eigenvectors of a square array.
+    \begin{itemize}
+        \item \textit{Returns}: A tuple \texttt{(w, v)} where \texttt{w} contains the 
+        eigenvalues and \texttt{v} the corresponding Matrix with eigenvectors as columns.
+    \end{itemize}
+    \item \texttt{np.linalg.inv(A)}: Computes the multiplicative inverse of a square matrix.
+    \item \texttt{np.linalg.det(A)}: Calculates the determinant of a matrix.
+    \item \texttt{np.trace(A)}: Computes the trace, which is the sum of the diagonal elements of an array .
+    \item \texttt{np.linalg.matrix\_rank(A)}: Returns the matrix rank of an array.
+    \item \texttt{np.linalg.norm(R)}: Computes the Euclidean norm (magnitude), defined as the square root of the sum of the squares of the vector's components  Formula: $||p||_{2} = \sqrt{x^{2} + y^{2} + z^{2}}$.
+\end{itemize}
+
+\textbf{Example Usage:}
+\lstinputlisting[language=Python]{code/linalg_methods_example.py}
+
+\section{Data Preprocessing and Cleaning}
+
+\subsection{Resampling}
+\lstinputlisting[language=Python]{code/resampling.py}
+
+
+\subsection{Data Cleaning \& Scaling}
+\lstinputlisting[language=Python]{code/data_cleaning.py}
+
+\subsection{NumPy File Handling}
+\lstinputlisting[language=Python]{code/np_file_handling.py}

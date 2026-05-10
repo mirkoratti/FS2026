@@ -35,28 +35,44 @@ $$ \text{DGL (explizit):} \quad y'' = \underbrace{2 \, y' - x^2 \, y + \frac{1}{
 \end{tabular}
 
 
-\subsection{Picard-Lindelöf}
+\subsection{Picard-Lindelöf (Eindeutigkeit der Lösung)}
 
-Schema zur Beruteilung der \textbf{Lösbarkeit} einer DGL
-
-\smallskip
-
-\begin{tabular}{ll}
-    (1) & $f(x, y, y', \, ... \, y^{(n-1)} )$ lokal bei $x_0 ; y_0$ stetig \\
-    (2) & alle partielle Ableitungen bilden: $f_y = \frac{\partial f}{\partial y}$ ; $f_y' = \frac{\partial f}{\partial y'}$ ; ... 
-\end{tabular}
+Schema zur Beurteilung der \textbf{Lösbarkeit} einer DGL an einem Punkt $(x_0, y_0)$:
 
 \medskip
+\textbf{Schritt 1: Stetigkeit (Existenz)}
+\begin{itemize}
+    \item[(1)] $f(x, y, y', \, ... \, y^{(n-1)} )$ lokal bei $x_0 ; y_0$ stetig.
+    \item[] Stetigkeit rimane con operazioni elementari: $+, -, \cdot, :, \text{subst (\crd{Att}. }\mathbb{D}) (\sqrt{f}, \ln(f))$\\
+    \cor{Lineare oder elementare Funktionen sind fast immer stetig.}
+\end{itemize}
 
-\textbf{Wenn} (1) erfüllt und alle (2) lokal bei $x_0 ; y_0$ beschränkt, \textbf{dann} ist DGL lokal eindeutig lösbar 
-(inkl. Anfangsbedingungen)
+\textbf{Schritt 2: Beschränktheit (Eindeutigkeit)}
+\begin{itemize}
+    \item[(2)] Alle partiellen Ableitungen bilden: $f_y = \frac{\partial f}{\partial y}$ ; $f_{y'} = \frac{\partial f}{\partial y'}$ ; ...
+    \begin{itemize}
+        \item Ist das Ergebnis \textbf{konstant} \textrightarrow\ automatisch lokal beschränkt.
+        \item Ist es eine \textbf{Formel} \textrightarrow\ $x_0, y_0$ einsetzen. 
+        Das Ergebnis muss $\in \mathbb{R}$
+    \end{itemize}
+\end{itemize}
 
-\smallskip
+\medskip
+\textbf{Fazit:}
+\begin{itemize}
+    \item \textbf{Wenn} (1) erfüllt \textbf{und} (2) lokal bei $x_0 ; y_0$ beschränkt: \\
+    \textrightarrow\ Die DGL ist \textbf{lokal eindeutig lösbar} (inkl. Anfangsbedingungen).
+    \item \textbf{Wenn} (1) erfüllt, \textbf{aber} (2) \myul{nicht} erfüllt (z.B. $\frac{1}{0}$ in der Ableitung): \\
+    \textrightarrow\ Eindeutigkeit ist nicht garantiert. \textbf{Singularitäts-Test durchführen!}
+\end{itemize}
 
-\textbf{Wenn} (1) erfüllt aber (2) \myul{nicht} erfüllt, dann ist alles möglich \\
-\textbf{ \textrightarrow\ Singularitäts-Test durchführen:} \\	
-Polstellen $f_y$ nach $y$ auflösen, in DGL einsetzen und konrollieren, ob DGL erfüllt ist
-
+\medskip
+\subsubsection{Singularitäts-Test (Ablauf bei Polstelle in $f_y$):}
+\begin{enumerate}
+    \item \textbf{Polstelle finden:} Nenner der partiellen Ableitung $= 0$ setzen.
+    \item \textbf{Auflösen:} Diese Gleichung nach $y$ auflösen (das liefert die singuläre Kandidaten-Lösung).
+    \item \textbf{Verifizieren:} Diese Funktion $y$ in die \textit{ursprüngliche} DGL einsetzen und kontrollieren, ob die Gleichung erfüllt ist.
+\end{enumerate}
 
 \subsection{ABC-Analyse}
 

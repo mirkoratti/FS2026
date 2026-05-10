@@ -1,5 +1,3 @@
-import numpy as np
-
 arr = np.array([1, 2, 3])# Basic 1D array
 np.ones((3, 3))          # 3x3 array of 1s
 np.zeros_like(arr)       # Array of 0s with the shape of 'arr'
