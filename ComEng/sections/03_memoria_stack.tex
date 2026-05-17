@@ -1,0 +1,54 @@
+% --- SEZIONE 2: MODELLO DI MEMORIA E STACK ---
+
+\section{Stack e Gestione Memoria}
+Lo \textbf{Stack} è una memoria temporanea utilizzata per variabili locali e salvataggio contestuale durante le eccezioni.
+\begin{itemize}
+    \item \textbf{Direzione:} Cresce verso indirizzi di memoria inferiori.
+    \item \textbf{Stack Pointer (SP):} Punta sempre al "top of stack". È vietato leggere o scrivere al di sotto di SP.
+    \item \textbf{Allineamento:} Normalmente allocato in step di 8 byte.
+    \item \textbf{Velocità:} L'accesso allo stack è circa due volte più rapido del RAM/ROM pointer poiché l'indirizzo (SP) è già disponibile.
+\end{itemize}
+
+\subsection{Estensioni e Manipolazione}
+\begin{itemize}
+    \item \textbf{SXTB/UXTH:} Estensione del segno o zero-fill (4 byte $\leftarrow$ 1/2 byte).
+    \item \textbf{REV/REV16:} Inversione dell'ordine dei byte (Endianness conversion).
+    \item \textbf{CMP/CMN:} Confronti che aggiornano le flag senza salvare il risultato (es. \texttt{CMP} esegue \texttt{SUBS}).
+\end{itemize}
+
+\section{Ottimizzazione e Strutture Dati}
+
+\subsubsection{Switch Case}
+\begin{itemize}
+    \item \textbf{Pro:} Numero di cicli di clock definito e prevedibile.
+    \item \textbf{Contro:} La condizione deve essere necessariamente una costante di tipo \texttt{int}.
+    \item \textbf{Nota:} L'ordine dei \texttt{case} è rilevante per l'efficienza della ricerca.
+\end{itemize}
+
+\subsubsection{Flusso di Controllo in Assembly}
+\begin{itemize}
+    \item \textbf{Selezioni (If/Else):} Si utilizza un \textbf{salto in avanti} con la \textbf{condizione invertita} rispetto al C (se la condizione falsa, salto oltre il blocco \textit{then}).
+    \item \textbf{Iterazioni (Loop):} Si utilizza un \textbf{salto all'indietro} alla fine del ciclo, mantenendo la \textbf{condizione assembly come in C} (salto all'inizio se la condizione è ancora vera).
+\end{itemize}
+
+\subsubsection{Tecniche di Ottimizzazione}
+\begin{itemize}
+    \item \textbf{Loop Unrolling:} Tecnica che consiste nel ripetere il corpo del loop 
+    per ridurre l'overhead dei \textit{branch} e degli incrementi del contatore.
+    \texttt{\#pragma unroll (n)}
+    \begin{itemize}
+        \item \textit{Vantaggio:} Maggiore velocità di esecuzione. (meno branches)
+        \item \textit{Svantaggio:} Maggiore occupazione di memoria (codice più lungo).
+    \end{itemize}
+    \item \textbf{Pointers (Stackless):} L'uso dei registri invece dello stack per manipolare i puntatori è significativamente più veloce (spesso più del doppio).
+\end{itemize}
+
+\subsubsection{Efficienza delle Strutture Dati}
+\begin{itemize}
+    \item \textbf{Array Locali:} Molto \textbf{inefficienti}. 
+    alto numero di cicli solo per l'inizializzazione nello stack frame 
+    \item \textbf{Strutture:} È consigliabile \textbf{definire le strutture globalmente}. L'inizializzazione locale su stack comporta un overhead elevato di cicli di clock.
+    \item \textbf{Bitfields:} Estremamente \textbf{inefficienti}. 
+    Sebbene risparmino memoria, richiedono complesse operazioni di
+     \textit{Read-Modify-Write} (LDR, Shift, Mask, OR, STR)
+\end{itemize}

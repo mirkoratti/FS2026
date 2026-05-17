@@ -68,3 +68,38 @@ i primi $n+1$ coefficienti delle loro serie sono identici.
     \item I coefficienti nulli (\(a_k = 0\)) sono fondamentali e vanno conteggiati nel confronto.
     \item Il primo coefficiente differente determina dove il contatto si "rompe".
 \end{itemize}
+
+\subsection{Integrali utili}
+\begin{center}
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{| c  c  c |}
+        \hline
+        \textbf{Ableitung} $\bm{\frac{\diff f}{\diff x}}$   & \textbf{Funktion} $\bm{f(x)}$ & \textbf{Stammfunktion} $\bm{F(x)}$    \\ 
+        \hline
+        $\frac{2x}{1+x^2}$              & $\ln(1+x^2)$     & $c \cdot x$                           \\ 
+    \end{tabular}
+\end{center}
+
+\subsection{Singularitätstest ergänzung}\label{chap:sing_erg}
+si dividono spesso i membri dell'equazione per termini contenenti la variabile dipendente. 
+Questo processo esclude implicitamente le soluzioni che annullano tali termini.
+
+\subsubsection{Procedimento Generale}
+
+\begin{enumerate}
+    \item \textbf{Identificazione dei punti critici:} 
+    Individua ogni termine $g(y)$ o $f(z)$ che è stato posto a denominatore durante i passaggi algebrici.
+    
+    \item \textbf{Ricerca dei candidati:}
+    Imponi il termine uguale a zero per trovare potenziali soluzioni 
+    costanti o funzioni particolari: $g(y) = 0 \implies y = c $
+    
+    \item \textbf{DGL (Einsetzen):}
+    Sostituisci la funzione candidata $y$ e la sua derivata $y'$ nella DGL iniziale
+    
+    \item \textbf{Valutazione del risultato:}
+    \begin{itemize}
+        \item \textbf{Soluzione:} identità sempre vera (es. $0 = 0$), la funzione è una soluzione valida non inclusa nell'integrale generale.
+        \item \textbf{Test Fallito:} un'uguaglianza dipendente da $x$ (es. $-x^2 = 0$) la funzione \underline{non} è una soluzione della DGL.
+    \end{itemize}
+\end{enumerate}

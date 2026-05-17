@@ -14,16 +14,16 @@
 
 
 % ========================================= DOCUMENT INFO =========================================
-\def\title{ComEng - Ergänzung}                   % title
-\def\shorttitle{ComEng}         % short title (displayed as PDF title)
-\def\dozent{Prof. Lars Kamm}                 % lecturer
-\def\semester{FS 2026}             % semester
-\def\author{Mirko Ratti}                % author(s)
-% \def\contributors{Contributors}     % contributor(s) (optional -> comment out if none)
-\def\repo{https://github.com/P4ntomime/TeXFoSaTemplate} % repository link
+\def\title{ComEng - Ergänzung}      % title
+\def\shorttitle{ComEng}             % short title (displayed as PDF title)
+\def\dozent{Prof. Lars Kamm}        % lecturer
+\def\semester{FS 2026}              % semester
+\def\author{Mirko Ratti}            % author(s)
+% \def\contributors{Contributors}   % contributor(s) (optional -> comment out if none)
+\def\repo{https://github.com/mirkoratti/FS2026} % repository link
 \def\version{1.0.\today}            % version
 \def\pagelimit{3}                   % page limit -> causes pages after limit to be red
-\def\titleoption{normal}     % options: ultra compact, compact, normal
+\def\titleoption{normal}            % options: ultra compact, compact, normal
 \def\enableToC{true}                % enable/disable table of contents
 
 % ================================= PACKAGES, SETUP AND COMMANDS ==================================
@@ -33,8 +33,11 @@
 % =========================================== DOCUMENT ============================================
 \begin{document}
     \begin{layout}
-        \input{sections/01_zahlensysteme.tex}
-        \input{sections/02_prova.tex}
-        % \input{sections/03_copia.tex}
+        \input{sections/01_fondamenti.tex}
+        \input{sections/02_sistema_controllo.tex}
+        \input{sections/03_memoria_stack.tex}
+        \input{sections/04_architetture_indirizzamento.tex}
+        \input{sections/05_compilazione_io.tex}
+        \input{sections/06_esempi.tex}
     \end{layout}
 \end{document}

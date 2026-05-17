@@ -1,0 +1,42 @@
+% --- SEZIONE 1: COMPONENTI DI SISTEMA E CONTROLLO ---
+
+\section{Componenti del Sistema (SCS)}
+Il \textbf{System Control Space (SCS)} gestisce le funzionalità core del processore, inclusa la configurazione del NVIC e del registro di controllo di sistema.
+
+\subsection{Meccanismi di Fault e Eccezioni}
+\begin{itemize}
+    \item \textbf{HardFaults:} Sempre attivati; gestiscono errori di Bus, Usage e Memory Management. Permettono una reazione rapida agli errori critici.
+    \item \textbf{Wake-up Interrupt:} Consente la disattivazione gerarchica dei componenti
+     per ridurre il consumo energetico (modalità Sleep/Stop).
+    \item \textbf{Memory Protection Unit (MPU):} Genera eccezioni in caso di accessi non autorizzati alla memoria.
+    \item \textbf{Debug Unit:} Fornisce fino a 4 breakpoint hardware per il debugging del codice.
+\end{itemize}
+
+\subsection{System Tick Timer (SysTick)}
+Un contatore a \textbf{24-bit} che fornisce una base dei tempi costante per il sistema operativo o i cicli di programma.
+
+
+\section{Gestione degli Interrupt (NVIC)}
+
+\begin{itemize}
+    \item Il \textbf{Nested Vector Interrupt Controller} gestisce la prioritizzazione e
+     il passaggio tra il programma di background e le 
+     \textbf{Interrupt Service Routine (ISR)}.
+    \item L'LSB in ogni vettore indica la modalità di salto (1: thumb, 0: ARM) nei Cortex-M sempre 1
+    \item Solitamente la VT (vector table) viene slavata in memoria fra il boot code e la seconda istruzione
+    \item Tramite VTOR (vetor table Offset Register) è possible cambaire la posizione
+\end{itemize}
+
+
+
+\begin{minipage}[b]{0.51\columnwidth}
+    \subsection{Registri di Mascheramento}
+    \begin{itemize}
+        \item \textbf{PRIMASK:} 1 bit per disabilitare tutti gli interrupt (tranne HardFault e NMI).
+        \item \textbf{FAULTMASK:} 1 bit per disabilitare interrupt e tutte le eccezioni.
+        \item \textbf{BASEPRI:} Disabilita interrupt con priorità inferiore a un valore impostato.
+    \end{itemize}
+    \includegraphics[width=\linewidth]{images/NVIC_sequence.png}
+\end{minipage}
+\includegraphics[width=0.49\columnwidth]{images/NVIC_table.png}
+

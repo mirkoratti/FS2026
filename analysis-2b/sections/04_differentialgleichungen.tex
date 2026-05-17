@@ -103,8 +103,7 @@ $$ y' = f(x \, ; \, y) = ( \text{Faktor in } x) * ( \text{Faktor in } y) = \tild
     (3) & $\int \limits_{y_0}^{y} \frac{\diff \tilde{y}}{g(y)} =$ gelöstes Integral                                                     \\
     (4) & Integral links lösen = gelöstes Integral rechts                                                                               \\
     (5) & Gleichung auflösen nach $y$ \textrightarrow\ Formel in $x$                                                                    \\
-    (6) & Singularitätstest um weitere Lösungen zu finden                                                                               \\
-        & $g(y) = 0 \,$ \textrightarrow\ $y = \ldots$ in DGL einsetzen und verifizieren 
+    (6) & Singularitätstest um weitere Lösungen zu finden (vedi \ref{chap:sing_erg})                                                                              \\
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
@@ -113,22 +112,26 @@ $$ y' = f(x \, ; \, y) = ( \text{Faktor in } x) * ( \text{Faktor in } y) = \tild
 
 \vspace{-0.2cm}
 
-$$ y' = f(x \, ; \, y) = f( \underbrace{ax + by +c}_{\substack{z}}) \qquad y(x_0) = y_0 $$
-separiert: \quad $z' = a + b \, f(z)$ \qquad $z(x_0) = z_0 = a  \,x_0 + b \, y_0 + c$ 
+$$ y' = f(x \, ; \, y) = f( \underbrace{ax + by +c}_{\substack{z}}) \qquad \qquad y(x_0) = y_0 $$\vspace{-1em}
+
+Separiert DGL: \quad $\boxed{z' = a + b \cdot f(z)}$ \qquad \qquad $z(x_0) = z_0 = a  \,x_0 + b \, y_0 + c$ 
 
 \smallskip
+\begin{itemize}
+    \item weiter in Abschnitt \ref{Trennung der Variablen (separiert)} 
+    mit $\tilde{f}(x) = 1$ (Non ci sono piu fattori dipendenti da $x$)
+    \item Substitution $y = z$
+\end{itemize}
 
-\textrightarrow\ weiter in Abschnitt \ref{Trennung der Variablen (separiert)} mit $\tilde{f}(x) = 1$ und Substitution $y = z$
+\subsubsection{Gleichgradigkeit}\vspace{-0.2cm}
 
+$$ y' = f(x \, ; \, y) = f \underbrace{\left(\frac{y}{x}\right)}_z \qquad \qquad y(x_0) = y_0 ; (x ; x_0 \neq 0) $$\vspace{-0.5em}
 
-\subsubsection{Gleichgradigkeit}
+Separiert DGL: \quad $\boxed{z' = \frac{1}{x} (f(z) - z)}$ \qquad \qquad $z(x_0) = z_0 = \frac{y_0}{x_0}$ 
 
-\vspace{-0.2cm}
-
-$$ y' = f(x \, ; \, y) = f \Big( \underbrace{\frac{y}{x}}_{\substack{z}} \Big) \qquad y(x_0) = y_0 ; (x ; x_0 \neq 0) $$ 
-
-separiert: \quad $z' = \frac{1}{x} (f(z) - z)$ \qquad $z(x_0) = z_0 = \frac{y_0}{x_0}$ \\
-\textrightarrow\ weiter in Abschnitt \ref{Trennung der Variablen (separiert)} mit $\tilde{f}(x) = \frac{1}{x}$ und Substitution $y = z$ 
+\begin{itemize}
+    \item weiter in Abschnitt \ref{Trennung der Variablen (separiert)} mit $\tilde{f}(x) = \frac{1}{x}$, Substitution $y = z$ 
+\end{itemize}
 
 \medskip
 
@@ -140,7 +143,7 @@ Variablen $x$ und $y$ vertauschen wenn:
 
 \begin{itemize}
     \item $f(\frac{y}{x})$ verkehrt herum, also $f(\frac{x}{y})$
-    \item Ableitung (Steigung) $y'$ steht im Kehrwert $\frac{1}{y'}$
+    \item Ableitung (Steigung) $y'$ steht im Kehrwert $\frac{1}{y'} \, \longrightarrow \, \tilde{x}' = \frac{1}{\tilde{y}'}$
 \end{itemize}
 
 
@@ -172,15 +175,27 @@ $$ y_p = k(x) \cdot  \e^{- \int \cgn{f(x)} \, \diff x} \quad \text{mit} \quad k(
 
 \subsection{Kurvenmengen}
 
-\begin{tabular}{lll}
-    A   & $y = c \cdot x$ \quad Parameter $(c \in \mathbb{R}$)                  \\  \smallskip
+\begin{minipage}{0.7\columnwidth}
+    \begin{tabular}{lll}
+        A   & $y = c \cdot x$ \quad Parameter $(c \in \mathbb{R}$)                  \\  \smallskip
     	& Geraden durch (0;0), $c$ = Steigung                                   \\
-    B   & $\frac{x^2}{a} + \frac{y^2}{b} = 1$ \quad Parameter ($a; \, b > 0$)   \\  \smallskip
+        B   & $\frac{x^2}{a} + \frac{y^2}{b} = 1$ \quad Parameter ($a; \, b > 0$)   \\  \smallskip
         & Ellipsen zentriert in (0;0), Halbachsen $\sqrt{a} \, ; \, \sqrt{b}$   \\  
-    C   & $x^2 + y^2 = c^2$ \\
+        C   & $x^2 + y^2 = c^2$ \\ 
         & Kreise zentriert in (0;0), Radius $\sqrt{c}$
-\end{tabular}
-
+    \end{tabular}
+\end{minipage}
+\begin{minipage}{0.3\columnwidth}
+    \textbf{Risoluzione:}
+    \begin{enumerate}
+        \item Equaz. con parametro var. $c$
+        \item Risolvere per $c$
+        \item Ableitung equazione pto.1
+        \item Sostiture $c$
+        \item Risovlere DGL
+    \end{enumerate}
+\end{minipage}
+    
 \medskip
 
 \begin{tabular}{llll}
@@ -201,7 +216,7 @@ Schneiden Originalkurven \myul{immer} senkrecht
         & \textrightarrow\ Originalkurven sind nun als DGL ausgedrückt          \\  
     (2) & DGL $y'$ in neue DGL \cbl{$\tilde{y}'$} transformieren                \\
         & \textrightarrow\ $\mathbb{L}$ der neuen DGL sind senkrechte Kurven    \\
-        & $y' = f(x \, ; \, y)$ \quad \textrightarrow\ \quad \cbl{$\tilde{y}' = - \frac{1}{f(x \, ; \, y)}$} \qquad \textrightarrow\ DGL \cbl{$\tilde{y}'$} lösen!
+        & $y' = f(x \, ; \, y)$ \quad \textrightarrow\ \quad \cbl{$\tilde{y}' = - \dfrac{1}{f(x \, ; \, \tilde{y})}$} \qquad \textrightarrow\ DGL \cbl{$\tilde{y}'$} lösen!
 \end{tabular}
 
 
