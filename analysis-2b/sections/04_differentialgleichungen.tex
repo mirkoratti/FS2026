@@ -147,12 +147,10 @@ Variablen $x$ und $y$ vertauschen wenn:
 \end{itemize}
 
 
-\subsection[Lineare DGL n=1]{Lineare DGL $\bm{n=1}$}
-
-\vspace{-0.2cm}
+\subsection[Lineare DGL n=1]{Lineare DGL $\bm{n=1}$}\vspace{-0.3cm}
 
 $$ 1 \, y' +  f(x) \, y = g(x) \qquad g(x) \text{ ist Störterm} \qquad \text{Anfangswert: } y(x_0) = y_0 $$
-$$ \text{\textbf{Lösungsmenge:}} \quad \mathbb{L} = \mathbb{L}_H + y_p \quad (\bm{y_p} \text{ \textbf{ist stationärer Anteil}}) $$
+$$ \text{\textbf{Lösungsmenge:}} \quad \boxed{\mathbb{L} = \mathbb{L}_H + y_p} \quad (\bm{y_p} \text{ \textbf{ist stationärer Anteil}}) $$
 
 \textbf{Gesamte Rechnung inkl. homogenem Teil ohne Integrations-Grenzen durchführen!}
 
@@ -161,16 +159,15 @@ $$ \text{\textbf{Lösungsmenge:}} \quad \mathbb{L} = \mathbb{L}_H + y_p \quad (\
 
 \vspace{-0.2cm}
 
-$$ 1 \, y' +  \cgn{f(x)} \, y = \cbl{g(x)} \quad \text{ \textlrarrow\ } \quad y' = -f(x) \, y $$ 
-$$ y = \underbrace{y_0}_{\substack{k}} \, \e^{- \int \limits_{x_0}^{x} \cgn{f(\tilde{x})} \, d\tilde{x}} \qquad 
-(y_0 \in \mathbb{R}) \text{ \textrightarrow\ } \mathbb{L}_H $$ 
+\[1 \, y' +  \cgn{f(x)} \, y = \cbl{g(x)} \quad \text{ \textlrarrow\ } \quad y' = -f(x) \, y  \]
+\[y = y_0 \cdot \e^{- \int \limits_{x_0}^{x} \cgn{f(\tilde{x})} \, d\tilde{x}} \qquad 
+(y_0 \in \mathbb{R}) \text{ \textrightarrow\ } \mathbb{L}_H\]
 
 
-\subsubsection{Partikulär / Inhomogen \textrightarrow\ Störterm $\bm{g(x) \neq 0}$}
+\subsubsection{Partikulär / Inhomogen \textrightarrow\ Störterm $\bm{g(x) \neq 0}$}\vspace{-0.2cm}
 
-\vspace{-0.2cm}
-
-$$ y_p = k(x) \cdot  \e^{- \int \cgn{f(x)} \, \diff x} \quad \text{mit} \quad k(x) = \int \cbl{g(x)} \cdot \e^{\, \int \cgn{f(x)} \, \diff x} \, \diff x $$
+\[y_p = k(x) \cdot  \e^{- \int \cgn{f(x)} \, \diff x} \quad \text{mit} \quad k(x) 
+= \int \cbl{g(x)} \cdot \e^{\, \int \cgn{f(x)} \, \diff x} \, \diff x\]
 
 
 \subsection{Kurvenmengen}
@@ -255,18 +252,20 @@ $$ \text{ \textbf{Lösungsmenge:}} \quad \mathbb{L} = \mathbb{L}_H + y_p $$
 
 \vspace{-0.3cm}
 
-$$ \text{char. Gleichung:} \quad \underbrace{1 \, \lambda^2 + a_1 \, \lambda + a_0}_{\substack{\text{char. Polynom}}} = 0 \qquad
-\lambda_{1,2} = - \frac{a_1}{2} \pm \sqrt{\Bigg( \frac{a_1}{2} \Bigg)^2 - a_0} $$
+$$ \text{\colorbox{yellow!50}{char. Gleichung:}} \quad \underbrace{1 \, \lambda^2 + a_1 \, \lambda + a_0}_{\text{char. Polynom}} = 0 \qquad
+\lambda_{1,2} = - \frac{a_1}{2} \pm \sqrt{\vphantom{\left(\frac{a_1}{2}\right)^2} 
+\smash[b]{\underbrace{\left(\frac{a_1}{2}\right)^2 - a_0}_D}} \vphantom{\underbrace{\left(\frac{a_1}{2}\right)^2 - a_0}_D} $$
 
-
-\begin{tabular}{ll}
-    $D > 0$ & $\lambda_{1,2} \in \mathbb{R}$ ; $\lambda_1 \neq \lambda_2$ \qquad (starke Dämpfung)                                                                      \\ \medskip
-            & $\mathbb{L}_H = A \, \e^{\lambda_1 \, x} + B \, \e^{\lambda_2 \, x}$ \quad ($A, B \in \mathbb{R}$)                                                        \\ 
-    $D < 0$ & $\lambda_{1,2} \notin \mathbb{R}$ ; $\lambda_{1,2} = - \frac{a_1}{2} \pm j \underbrace{\sqrt{\vert D \vert}}_{\substack{\alpha}}$ \qquad (Schwingfall)    \\ \medskip
-            & $\mathbb{L}_H = A \, \e^{- \frac{a_1}{2} x} \cdot \cos(\alpha \, x) + B \, \e^{- \frac{a_1}{2} x} \cdot \sin(\alpha \, x)$ \quad ($A, B \in \mathbb{R}$)  \\
-    $D = 0$ & $\lambda_1 = \lambda_2 = - \frac{a_1}{2} \in \mathbb{R}$ \qquad (Aperiodischer Grenzfall)                                                                 \\
-            & $\mathbb{L}_H = A \; \e^{\lambda_1 \, x} + B \; x \; \e^{\lambda_1 \, x}$ \quad ($A, B \in \mathbb{R}$)\\
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{lll}
+    $D > 0$ & $\lambda_{1,2} \in \mathbb{R}$ ; $\lambda_1 \neq \lambda_2$ & (starke Dämpfung)                                                                      \\ \medskip
+            & $\mathbb{L}_H = A \, \e^{\lambda_1 \, x} + B \, \e^{\lambda_2 \, x}$ & ($A, B \in \mathbb{R}$)                                                        \\ 
+    $D < 0$ & $\lambda_{1,2} \notin \mathbb{R}$ ; $\lambda_{1,2} = - \frac{a_1}{2} \pm j \cdot \underbrace{\sqrt{\vert D \vert}}_{\substack{\alpha}}$ & (Schwingfall)    \\ \medskip
+            & $\mathbb{L}_H = A \, \e^{- \frac{a_1}{2} x} \cdot \cos(\alpha \, x) + B \, \e^{- \frac{a_1}{2} x} \cdot \sin(\alpha \, x)$ & ($A, B \in \mathbb{R}$)  \\
+    $D = 0$ & $\lambda_1 = \lambda_2 = - \frac{a_1}{2} \in \mathbb{R}$ & (Aperiodischer Grenzfall)                                                                 \\
+            & $\mathbb{L}_H = A \; \e^{\lambda_1 \, x} + B \; x \; \e^{\lambda_1 \, x}$ & ($A, B \in \mathbb{R}$)\\
 \end{tabular}
+\setlength{\tabcolsep}{6pt}
 
 \medskip
 
@@ -303,7 +302,7 @@ Vorteile: & Störung direkt verwendet \\
     $\cgn{p_n(x)}$  & Polynom vom Grad $n$ \quad (z.B. $a x^2 + b x + c$ für $n = 2$)                   \\  
     $\cbl{q_n(x)}$  & Lösungs-Polynom vom gleichen Grad $n$ \quad (z.B. $a x^2 + b x + c$ für $n = 2$)  \\  \medskip
                     & \textrightarrow\ Koeffizienten bestimmen durch einsetzen in DGL                   \\  \medskip
-    $r_n$, $s_n$    & Amplituden \textrightarrow\ $y_p$ in DGL einsetzen                                \\  
+    $r_n$, $s_n$    & Amplituden \textrightarrow\ $y_p$ in DGL einsetzen (come $y$)                              \\  
     $a_1$, $a_0$    & Koeffizienten $\in \mathbb{R}$
 \end{tabular}
 
@@ -345,13 +344,14 @@ $$ y'' + a_1 \, y' + a_0 \, y = \e^{b x} \cgn{p_n(x)} $$
 
 $$ y'' + a_1 \, y' + a_0 \, y = \e^{cx} \big( \cgn{p_n(x)} \, \cos(bx) + \cbl{q_n(x)} \, \sin(bx) \big) $$ 
 
-
 \begin{tabular}{ll}
-    a)  & wenn $c + \jimg b$ keine Lösung der char. Gleichung ist                                       \\  \medskip
+    a)  & wenn $c + \jimg b$ \textbf{keine} Lösung der \colorbox{yellow!50}{char. Gleichung} ist                                       \\  \medskip
         & \textrightarrow\ $y_p = \e^{c x} \big( r_n(x) \, \cos(bx) + s_n(x) \, \sin(bx) \big)$         \\
-    b)  & wenn $c + \jimg b$ Lösung der char. Gleichung ist                                             \\
+    b)  & wenn $c + \jimg b$ Lösung der \colorbox{yellow!50}{char. Gleichung} ist                                             \\
         & \textrightarrow\ $y_p = \e^{c x} \, x \, \big( r_n(x) \, \cos(bx) + s_n(x) \, \sin(bx) \big)$
-\end{tabular}
+\end{tabular}\medskip
+
+(Verificare se $c$ e $b$ sono ugualli alla sol. della gleichung)
 
 
 \subsection[Lineare DGL Ordnung n in N]{Lineare DGL Ordnung $\bm{n \in}\mathbb{N}$ }

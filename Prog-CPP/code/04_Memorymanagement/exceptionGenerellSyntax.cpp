@@ -1,5 +1,7 @@
 try {
-    // dangerous Code with throw
+    if (errorCondition) {
+        throw MyExceptionClass{"Error string"}
+    }
 } catch (const MyExceptionClass& exc) { // Always const ref.
     // Error handling.
 }
