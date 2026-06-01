@@ -301,7 +301,7 @@ Vorteile: & Störung direkt verwendet \\
     \medskip
     $\cgn{p_n(x)}$  & Polynom vom Grad $n$ \quad (z.B. $a x^2 + b x + c$ für $n = 2$)                   \\  
     $\cbl{q_n(x)}$  & Lösungs-Polynom vom gleichen Grad $n$ \quad (z.B. $a x^2 + b x + c$ für $n = 2$)  \\  \medskip
-                    & \textrightarrow\ Koeffizienten bestimmen durch einsetzen in DGL                   \\  \medskip
+                    & Koeffizienten bestimmen durch einsetzen in DGL ($y_p'' \rightarrow y'', y_p' \rightarrow y', \dots$)                   \\  \medskip
     $r_n$, $s_n$    & Amplituden \textrightarrow\ $y_p$ in DGL einsetzen (come $y$)                              \\  
     $a_1$, $a_0$    & Koeffizienten $\in \mathbb{R}$
 \end{tabular}
@@ -333,7 +333,7 @@ $$ y'' + a_1 \, y' + a_0 \, y = \e^{b x} \cgn{p_n(x)} $$
         & \textrightarrow\ $y_p = e^{b x} \cbl{q_n(x)}$             \\
     b)  & wenn $b$ \textbf{einfache} Lösung der char. Gleichung ist \\  \medskip
         & \textrightarrow\ $y_p = \e^{b x} x \, \cbl{q_n(x)}$       \\
-    c)  & wenn $b$ \textbf{doppelte} Lösung der char. Gleichung ist \\
+    c)  & wenn $b$ \textbf{doppelte} Lösung der char. Gleichung ist ($D=0, \, \lambda_1 = \lambda_2$) \\
         & \textrightarrow\ $y_p = \e^{b  x} x^2 \, \cbl{q_n(x)}$
 \end{tabular}
 
@@ -372,12 +372,9 @@ $$ \text{ \textbf{Lösungsmenge:}} \quad \mathbb{L} = \mathbb{L}_H + y_p $$
 
 \vspace{-0.2cm}
 
-$$ \text{char. Gleichung:} \quad \underbrace{1 \, \lambda^n + a_{n-1} \, \lambda^{n-1} + \ldots + a_2 \, \lambda^2 + a_1 \, \lambda + a_0}
-_{\substack{\text{char. Polynom}}} = 0 $$ 
+$$ \text{char. Gleichung:} \quad 1 \, \lambda^n + a_{n-1} \, \lambda^{n-1} + \ldots + a_2 \, \lambda^2 + a_1 \, \lambda + a_0 = 0 $$ 
 
-\textrightarrow\ $\lambda$ finden und gemäss folgender Tabelle Baustein finden:
-
-\medskip
+\textit{$r, k$: numero di ripetizioni $\lambda$}
 
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{ll}

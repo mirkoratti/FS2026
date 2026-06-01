@@ -91,11 +91,50 @@
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
-\subsubsection{Andere}
-\begin{tabular}{ll}
-    $\cos(n \pi) = (-1)^n$                   & 
-\end{tabular}
+\subsubsection{Valori Notevoli per le Serie di Fourier}
 
+% --- Valori Notevoli per n Intero ---
+\noindent\textbf{Valori fondamentali ($n \in \mathbb{Z}$):}
+\begin{center}
+\begin{tabular}{lll}
+    $\cos(n\pi) = (-1)^n$ & $\sin(n\pi) = 0$ & $e^{\pm\jimg n\pi} = (-1)^n$ \\
+    $\cos(2n\pi) = 1$     & $\sin(2n\pi) = 0$    & $e^{\pm\jimg 2n\pi} = 1$
+\end{tabular}
+\end{center}
+
+% --- Casi con frazioni di Pi Greco (2 Colonne compatto) ---
+\noindent\textbf{Frazioni di $\pi$ ($n \in \mathbb{Z}$, con $k \in \mathbb{Z}$):}
+\begin{center}
+\begin{tabular}{ll}
+    $\cos\left(n\frac{\pi}{2}\right) = \begin{cases} 0 & n = 2k+1 \\ (-1)^k & n = 2k \end{cases}$ & 
+    $\sin\left(n\frac{\pi}{2}\right) = \begin{cases} (-1)^k & n = 2k+1 \\ 0 & n = 2k \end{cases}$ \\
+    \noalign{\vspace{0.15cm}}
+    $e^{\pm\jimg n\frac{\pi}{2}} = (\pm\jimg)^n$ & 
+    $e^{\pm\jimg n\frac{3}{2}\pi} = (\mp\jimg)^n$ \\
+    \noalign{\vspace{0.15cm}}
+    $\cos\left(n\frac{\pi}{3}\right) = \begin{cases} (-1)^k & n = 3k \\ \frac{1}{2} & n = 6k \pm 1 \\ -\frac{1}{2} & n = 6k \pm 2 \end{cases}$ &
+    $\sin\left(n\frac{\pi}{3}\right) = \begin{cases} 0 & n = 3k \\ \frac{\sqrt{3}}{2} & n = 6k+1, 6k+2 \\ -\frac{\sqrt{3}}{2} & n = 6k+4, 6k+5 \end{cases}$ \\
+    \noalign{\vspace{0.15cm}}
+    $e^{\pm\jimg n\frac{\pi}{3}} = \cos\left(n\frac{\pi}{3}\right) \pm \jimg \sin\left(n\frac{\pi}{3}\right)$ & \\
+    \noalign{\vspace{0.15cm}}
+    $\cos\left(n\frac{\pi}{4}\right) = \begin{cases} 1 & n = 8k \\ -1 & n = 8k+4 \\ 0 & n = 8k+2, 8k+6 \\ \frac{\sqrt{2}}{2} & n = 8k+1, 8k+7 \\ -\frac{\sqrt{2}}{2} & n = 8k+3, 8k+5 \end{cases}$ &
+    $\sin\left(n\frac{\pi}{4}\right) = \begin{cases} 0 & n = 4k \\ 1 & n = 8k+2 \\ -1 & n = 8k+6 \\ \frac{\sqrt{2}}{2} & n = 8k+1, 8k+3 \\ -\frac{\sqrt{2}}{2} & n = 8k+5, 8k+7 \end{cases}$ \\
+    \noalign{\vspace{0.15cm}}
+    $e^{\pm\jimg n\frac{\pi}{4}} = \left(\frac{\sqrt{2}}{2} \pm \jimg\frac{\sqrt{2}}{2}\right)^n$ & 
+\end{tabular}
+\end{center}
+
+% \vspace{0.2cm}
+% % --- Combinazioni lineari (coefficienti traslati) ---
+% \noindent\textbf{Combinazioni costanti nei coefficienti ($n \in \mathbb{Z}$):}
+% \begin{center}
+% \begin{tabular}{ll}
+%     $\cos(n\pi - \alpha) = (-1)^n \cos(\alpha)$ & $\sin(n\pi - \alpha) = -(-1)^n \sin(\alpha)$ \\
+%     $\cos\left(n\pi - \frac{\pi}{2}\right) = \sin(n\pi) = 0$ & $\sin\left(n\pi - \frac{\pi}{2}\right) = -\cos(n\pi) = -(-1)^n$ \\
+%     $\cos\left(2n\pi - \frac{\pi}{2}\right) = 0$ & $\sin\left(2n\pi - \frac{\pi}{2}\right) = -1$ \\
+%     $e^{-\jimg (n\pi + \alpha)} = (-1)^n e^{-\jimg \alpha}$ & $e^{-\jimg (2n\pi + \alpha)} = e^{-\jimg \alpha}$
+% \end{tabular}
+% \end{center}
 \subsection{Exponentialgesetze (reell)}
 
 \begin{tabular}{lllll}

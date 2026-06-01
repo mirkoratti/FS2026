@@ -1,21 +1,28 @@
 1 pascal = $10^5$ bar = $7.50062 \cdot 10^{-2}$ torr
 
 \section{Molmassen wichtiger Atome}
-
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{c | c | c }
-    \textbf{Symbol} & \textbf{Molekül}  & \textbf{Molmasse}                 \\
-    \hline
-    H               & Wasserstoff       & $1.008 \, \frac{\gram}{\mole}$    \\
-    C               & Kohlenstoff       & $12.011 \, \frac{\gram}{\mole}$   \\
-    N               & Stickstoff        & $14.007 \, \frac{\gram}{\mole}$   \\
-    O               & Sauerstoff        & $15.999 \, \frac{\gram}{\mole}$   \\
-    Al              & Aluminium         & $26.982 \, \frac{\gram}{\mole}$   \\
-    Si              & Silicium          & $28.982 \, \frac{\gram}{\mole}$   \\
-\end{tabular}\smallbreak
+\begin{minipage}{0.5\columnwidth}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{c | c | c }
+        \textbf{Symbol} & \textbf{Molekül}  & \textbf{Molmasse}                 \\
+        \hline
+        H               & Wasserstoff       & $1.008 \, \frac{\gram}{\mole}$    \\
+        C               & Kohlenstoff       & $12.011 \, \frac{\gram}{\mole}$   \\
+        N               & Stickstoff        & $14.007 \, \frac{\gram}{\mole}$   \\
+        O               & Sauerstoff        & $15.999 \, \frac{\gram}{\mole}$   \\
+        Al              & Aluminium         & $26.982 \, \frac{\gram}{\mole}$   \\
+        Si              & Silicium          & $28.982 \, \frac{\gram}{\mole}$   \\
+    \end{tabular}\smallbreak
+\end{minipage}\hfill
+\begin{minipage}[b]{0.49\columnwidth}
+    \begin{itemize}
+        \item Area sfera: $4\pi r^2$
+        \item Volume sfera: $\frac{4}{3} \pi r^2$
+    \end{itemize}
+\end{minipage}
 
 Elementi come $H_2$ sono e volte la molmassse di $H$
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1}
 
 \section{Ansätze zu Aufgaben}
 
@@ -96,14 +103,13 @@ $$ \boxed{ P =  \frac{W}{t} = \frac{p \cdot V}{t} = p  \cdot  \dot{V} } $$
 
 \subsection{Torricelli}
 \begin{minipage}{0.5\columnwidth}
-    \includegraphics[width=\linewidth]{images/torricelli.png}
+    \includegraphics[width=0.8\linewidth]{images/torricelli.png}
 \end{minipage}
 \begin{minipage}[b]{0.48\columnwidth}
     \cor{Attenzione} anche se il tubo andasse sopra 
     al livello dell'$\rm H_2O$ l'altezza viene sempre calcolata dal livello dell'acqua
 
-    \[\boxed{v = \sqrt{2gh}} \qquad \boxed{x = 2\sqrt{h(H-h)}}\]
-    
+    \[\boxed{v = \sqrt{2gh}} \qquad \boxed{x = 2\sqrt{h(H-h)}}\]  
 \end{minipage}  
 
 
@@ -113,7 +119,6 @@ $$ \boxed{ P =  \frac{W}{t} = \frac{p \cdot V}{t} = p  \cdot  \dot{V} } $$
 
 \[\boxed{ P = F \cdot v } \qquad \boxed{F = \dot{m} \cdot \Delta v}\qquad \boxed{ E_{\rm kin} = \frac{1}{2} \, m \cdot v^2 } \]
 \[\boxed{\dot{m} = \rho \dot{V}}\]
-
 
 
 \subsection{Wasser mit Dampf erhitzen}
@@ -139,6 +144,7 @@ Gesucht ist die Mischtemperatur $T_M$
 $$ \Delta Q_{\rm ab} = \Delta Q_{\rm zu} $$
 $$ m_W \cdot c_W \cdot (T_W - T_M) = m_E \cdot c_E \cdot (T_0 - T_E) + q_f \cdot m_E + m_E \cdot c_W \cdot (T_M - T_0) $$
 
+
 \subsection[Concetto di temperatura Critica nelle bombole]
 {Concetto di Temperatura Critica ($T_k$) nelle Bombole}
 
@@ -151,6 +157,33 @@ $$ m_W \cdot c_W \cdot (T_W - T_M) = m_E \cdot c_E \cdot (T_0 - T_E) + q_f \cdot
     La sostanza è esclusivamente allo stato gassoso (gas supercritico). Non può esistere liquido indipendentemente dalla pressione applicata.
     \item \textbf{Comportamento:} Aprendo la valvola, la pressione cala immediatamente poiché diminuisce la densità del gas senza che ci sia liquido a compensare la perdita di massa.
 \end{itemize}\smallbreak
+
+\subsection{Zeitliche Dynamik des Phasenübergangs }
+Die durch Wärmeleitung abgeführte Wärmestromdichte $j_Q$ (aus Abschnitt 9.6.1) entspricht der pro Zeit- und Flächeneinheit freigesetzten latenten Wärme beim Erstarren:
+\begin{equation*}
+j_Q = -\lambda_Q \cdot \frac{dT}{dx} \quad \Longrightarrow \quad j_Q = q_f \cdot \rho \cdot \frac{dx}{dt}
+\end{equation*}
+
+Daraus ergibt sich die allgemeine Wachstumsgeschwindigkeit der Schichtdicke $x$ in Abhängigkeit vom aktuellen Kehrwert der Dicke:
+\begin{equation*}
+\frac{dx}{dt} = \frac{\lambda_Q \cdot \Delta T}{q_f \cdot \rho \cdot x}
+\end{equation*}
+
+\subsubsection{Integration für veränderliche Schichtdicken}
+Da die Wachstumsgeschwindigkeit mit zunehmender Dicke $x$ kontinuierlich abnimmt, muss zur Bestimmung der Gesamtzeit $t$ für ein Wachstum von Dicke $x_1$ auf $x_2$ integriert werden:
+\begin{equation*}
+x \cdot dx = \left( \frac{\lambda_Q \cdot \Delta T}{q_f \cdot \rho} \right) \cdot dt
+\end{equation*}
+
+Durch Integration auf beiden Seiten erhält man:
+\begin{equation*}
+\int_{x_1}^{x_2} x \cdot dx = \frac{\lambda_Q \cdot \Delta T}{q_f \cdot \rho} \int_{0}^{t} dt \quad \Longrightarrow \quad \frac{1}{2}\left(x_2^2 - x_1^2\right) = \frac{\lambda_Q \cdot \Delta T}{q_f \cdot \rho} \cdot t
+\end{equation*}
+
+Daraus resultiert die Gesamtdauer $t$ für den Prozess:
+\begin{equation*}
+t = \frac{q_f \cdot \rho \cdot \left(x_2^2 - x_1^2\right)}{2 \cdot \lambda_Q \cdot \Delta T}
+\end{equation*}
 
 \section{Sistemi Termodinamici}
 Un sistema termodinamico è un sistema fisico limitato spazialmente per il quale è possibile stabilire un bilancio energetico (e di massa, se aperto).

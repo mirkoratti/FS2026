@@ -37,7 +37,7 @@ $$ \boxed{ K_S = \sigma \cdot T^4 }  $$
 
 \subsubsection{Wien'sches Verschiebungsgesetz}
 
-Verschiebung der maximalen Wellenlänge:
+% Verschiebung der maximalen Wellenlänge:
 
 $$ \boxed{ \lambda_{\rm max} \cdot T = \const = b } $$
 
@@ -67,22 +67,26 @@ $$ \boxed { \Delta E = h \cdot f }  $$
 \subsection{Wärmetransport (an Beispiel Hauswand)}
 
 \includegraphics[width=\columnwidth]{images/Waermetransport.png}
+\smallskip
 
-
-\subsubsection{Wärmeleitung}
-
-\vspace{-0.2cm}
-
-$$ \boxed{ j = - \lambda \cdot \frac{\diff T}{\diff x}  } $$ 
-
-
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{c l c}
-	$j$ 						& Wärmestromdiche 			& $[j] = \frac{\watt}{\meter^2}$ 								\\
-	$\lambda$ 					& Wärmeleitfähigkeit 		& $[\lambda] = \frac{\watt}{\meter \, \kelvin}$ 				\\
-	$\frac{\diff T}{\diff x}$ 	& Wärmeabnahme / Gradient 	& $ \Big[\frac{\diff T}{\diff x} \Big] = \frac{\kelvin}{\meter}$	\\
-\end{tabular}
-\renewcommand{\arraystretch}{1}
+\begin{minipage}{0.6\columnwidth}
+	\subsubsection{Wärmeleitung}
+	\vspace{-0.2cm}
+	
+	$$ \boxed{ j = - \lambda \cdot \frac{\diff T}{\diff x}  } $$ 
+	
+	
+	\renewcommand{\arraystretch}{1.3}
+	\begin{tabular}{c l c}
+		$j$ 						& Wärmestromdiche 			& $[j] = \frac{\watt}{\meter^2}$ 								\\
+		$\lambda$ 					& Wärmeleitfähigkeit 		& $[\lambda] = \frac{\watt}{\meter \, \kelvin}$ 				\\
+		$\frac{\diff T}{\diff x}$ 	& Wärmeabnahme / Gradient 	& $ \Big[\frac{\diff T}{\diff x} \Big] = \frac{\kelvin}{\meter}$	\\
+	\end{tabular}
+	\renewcommand{\arraystretch}{1}
+\end{minipage}
+\begin{minipage}{0.4\columnwidth}
+	\includegraphics[width=0.8\linewidth]{images/wärmedurchgang.png}
+\end{minipage}
 
 
 \subsubsection{Wärmeübergang}
@@ -94,11 +98,12 @@ $$ \boxed{\mathrm{innen:} \quad  j = \alpha_i \cdot (T_i - T_{wi} )
 $$ \boxed{\mathrm{aussen:} \quad  j = \alpha_a \cdot (T_{wa} - T_a )  
 \qquad \mathrm{mit} \quad \alpha_a = 20 \, \frac{\watt}{\meter^2 \, \kelvin} } $$ 
 
+$\alpha$ descrive il passaggio di calore fra un fluido e un solido
 
 \subsubsection{Wärmedurchgang}
-Material + Dicke zusammengefasst
+Material + Dicke zusammengefasst (Wärmeleitung + Wärmeübergang)
 
-$$ \boxed{ j = k \cdot (T_i - T_a) = k \cdot \Delta T  \qquad \mathrm{mit} \, k = \frac{\lambda}{d} } \qquad \qquad
+$$ \boxed{ j = k_{\rm tot} \cdot (T_i - T_a) = k \cdot \Delta T  \qquad \mathrm{mit} \, k = \frac{\lambda}{d} } \qquad \qquad
 \cor{  \boxed{ P =  \dot{Q} = j \cdot A } } $$ 
 
 \renewcommand{\arraystretch}{1.3}
@@ -121,9 +126,9 @@ $$ \boxed{ j = k \cdot (T_i - T_a) = k \cdot \Delta T  \qquad \mathrm{mit} \, k 
 
 Der komplette Wärmedurchgang leitet sich her durch die \textbf{Erhaltung der Wärmestrondichte $\bm{j}$} und errechnet sich mit:
 
-$$ \boxed{\text{n Schichten:} \quad \frac{1}{k_{\rm tot}} = \frac{1}{\alpha_i} + \sum_x  \frac{1}{k_x} + \frac{1}{\alpha_a} } $$
+$$ \boxed{\text{n Schichten:} \quad \frac{1}{k_{\rm tot}} = \frac{1}{\alpha_i} + \left(\sum_x  \frac{1}{k_x}\right) + \frac{1}{\alpha_a} } $$
 
-$$ \boxed{\text{zylindrisch:} \quad \frac{1}{k_{\rm tot}} = r_a \Biggl( \frac{1}{\alpha_i \cdot r_i} + \sum_x \frac{1}{\lambda_x} \cdot \ln \Biggl( \frac{r_{xa}}{r_{xi}} \Biggr) + \frac{1}{\alpha_a} \cdot \frac{1}{r_a} \Biggr) } $$
+$$ \boxed{\text{zylindrisch:} \quad \frac{1}{k_{\rm tot}} = r_a \left( \frac{1}{\alpha_i \cdot r_i} + \sum_x \frac{1}{\lambda_x} \cdot \ln \Biggl( \frac{r_{xa}}{r_{xi}} \Biggr) + \frac{1}{\alpha_a} \cdot \frac{1}{r_a}\right) } $$
 
 
 \renewcommand{\arraystretch}{1.3}

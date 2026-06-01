@@ -1,7 +1,6 @@
 % --- SEZIONE 3: ARCHITETTURE E COMPILAZIONE ---
 
 \section{Confronto Architetture ARM Cortex}
-La famiglia Cortex si divide in tre profili ottimizzati per diversi scenari:
 \begin{description}
     \item[Cortex-A (Application):] Calcolo generico ad alte prestazioni (Linux/Android).
     \item[Cortex-R (Real-Time):] Bassa latenza e alta affidabilità (automotive/medico).
@@ -25,18 +24,22 @@ Cortex-M7  & \cellcolor{green!60}Fully  & \cellcolor{green!60}Fully  & \cellcolo
 \renewcommand{\arraystretch}{1}
 
 \subsection{Evoluzione Cortex-M0 vs M0+}
-\begin{itemize}
-    \item \textbf{M0+ Pipeline:} Ridotta a 2 stadi per maggiore efficienza.
-    \item \textbf{Accesso I/O:} Supporto per Single-Cycle GPIO.
-    \item \textbf{Debugging:} Micro Trace Buffer (MTB) opzionale per il tracciamento dei salti.
-    \item \textbf{MPU}
-\end{itemize}
+\begin{minipage}[t]{0.49\columnwidth}
+    \begin{itemize}
+        \item \textbf{M0+ Pipeline:} Ridotta a 2 stadi per maggiore efficienza.
+        \item \textbf{Accesso I/O:} Supporto per Single-Cycle GPIO.
+        \item \textbf{Debugging:} Micro Trace Buffer (MTB) opzionale per il tracciamento dei salti.
+        \item \textbf{MPU}
+    \end{itemize}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.49\columnwidth}
+    \textbf{Pipeline}
+    \begin{itemize}
+        \item[+] Es wird in jedem Cycle ein Befehl ausgeführt
+        \item [-] Bei sprüngen muss die Pipeline 'geleert' werden
+    \end{itemize}
+\end{minipage}
 
-\subsubsection{Pipeline}
-\begin{itemize}
-    \item[+] Es wird in jedem Cycle ein Befehl ausgeführt
-    \item [-] Bei sprüngen muss die Pipeline 'geleert' werden
-\end{itemize}
 
 \section{Adressierungsarten ARM (Cortex-M0)}
 \begin{minipage}{0.5\columnwidth}

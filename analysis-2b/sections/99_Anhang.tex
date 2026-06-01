@@ -11,20 +11,20 @@ geometrica.
         f(x) = \frac{P(x)}{Q(x)} \xrightarrow{PBZ} \frac{A}{ax+b} + \frac{B}{cx+d}
     \end{equation*}
 
-    \item \textbf{2. Geometrische Reihe:} Invece di usare la formula di Taylor standard,
-    si riconducono i termini alla forma chiusa della serie geometrica, della quale 
-    conosciamo già lo sviluppo:
+    \item \textbf{2. Geometrische Reihe:} 
+    si riconducono i termini alla forma chiusa della serie geometrica:
     \begin{equation*}
         \frac{1}{1-\cor{q}} = \sum_{n=0}^{\infty} \cor{q}^n
     \end{equation*}
 
-    \item \textbf{3. Normalizzazione del Denominatore:} Si manipolano i fratti raccogliendo le costanti a denominatore per ottenere esattamente un $1$ iniziale, portandoli nella forma standard $\frac{1}{1-q}$.
+    \item \textbf{3. Normalizzazione del Denominatore:} Si manipolano i fratti 
+    raccogliendo le costanti a denominatore per ottenere esattamente un $1$ iniziale, forma standard $\frac{1}{1-q}$.
     \begin{equation*}
         \frac{A}{a+bx} = \frac{A}{a} \cdot \frac{1}{1 - \left(-\frac{b}{a}x\right)} \quad \implies \quad \cor{q} = -\frac{b}{a}x
     \end{equation*}
 
     \item \textbf{4. Linearità e Vorfaktor:} Le costanti e segni vengono spostati nelle 
-    sommatorie. Se possibile, si uniscono le serie in un'unica sommatoria raccogliendo $x^n$.
+    sommatorie. Si uniscono le serie in un'unica sommatoria raccogliendo $x^n$.
 
     \item \textbf{5. Konvergenzradius ($\rho$):} La serie geometrica converge solo se 
     $|q| < 1$. 
@@ -34,7 +34,7 @@ geometrica.
     (\textbf{minimo} raggi)
 \end{itemize}
 
-\subsection*{Cambio di indice nelle sommatorie}
+\subsection{Cambio di indice nelle sommatorie}
 
 Per traslare l'indice di una sommatoria di una quantità costante $s$, si applica la seguente trasformazione generale:
 
@@ -45,11 +45,10 @@ Per traslare l'indice di una sommatoria di una quantità costante $s$, si applic
 I passaggi logici sono tre:
 \begin{enumerate}
     \item \textbf{Nuova variabile}: Si definisce $k = n + s$.
-    \item \textbf{Nuovi limiti}: Il limite inferiore diventa $k_{start} = n_0 + s$ e quello superiore $k_{end} = N + s$.
-    \item \textbf{Sostituzione}: Si esprime $n$ in funzione di $k$ ($n = k - s$) e si sostituisce in ogni occorrenza all'interno dell'argomento.
+    \item \textbf{Nuovi limiti}: inferiore diventa $k_{start} = n_0 + s$ e superiore $k_{end} = N + s$.
+    \item \textbf{Sostituzione}: $n$ in funzione di $k$ ($n = k - s$) e sostituire all'interno dell'argomento.
 \end{enumerate}
 
-\paragraph{Esempio pratico:}
 \begin{equation*}
 \sum_{n=0}^{\infty} \frac{x^{n+1}}{(n+1)^2} \quad \xrightarrow{k = n + 1} \quad \sum_{k=1}^{\infty} \frac{x^k}{k^2}
 \end{equation*}
@@ -68,17 +67,6 @@ i primi $n+1$ coefficienti delle loro serie sono identici.
     \item I coefficienti nulli (\(a_k = 0\)) sono fondamentali e vanno conteggiati nel confronto.
     \item Il primo coefficiente differente determina dove il contatto si "rompe".
 \end{itemize}
-
-\subsection{Integrali utili}
-\begin{center}
-    \renewcommand{\arraystretch}{1.6}
-    \begin{tabular}{| c  c  c |}
-        \hline
-        \textbf{Ableitung} $\bm{\frac{\diff f}{\diff x}}$   & \textbf{Funktion} $\bm{f(x)}$ & \textbf{Stammfunktion} $\bm{F(x)}$    \\ 
-        \hline
-        $\frac{2x}{1+x^2}$              & $\ln(1+x^2)$     & $c \cdot x$                           \\ 
-    \end{tabular}
-\end{center}
 
 \subsection{Singularitätstest ergänzung}\label{chap:sing_erg}
 si dividono spesso i membri dell'equazione per termini contenenti la variabile dipendente. 
@@ -99,7 +87,16 @@ Questo processo esclude implicitamente le soluzioni che annullano tali termini.
     
     \item \textbf{Valutazione del risultato:}
     \begin{itemize}
-        \item \textbf{Soluzione:} identità sempre vera (es. $0 = 0$), la funzione è una soluzione valida non inclusa nell'integrale generale.
+        \item \textbf{Soluzione:} identità sempre vera (es. $0 = 0$), \cgn{la funzione è una soluzione valida.} 
         \item \textbf{Test Fallito:} un'uguaglianza dipendente da $x$ (es. $-x^2 = 0$) la funzione \underline{non} è una soluzione della DGL.
     \end{itemize}
 \end{enumerate}
+
+\subsection{Neutralità del Faltungsintegral}
+Se si calcola la soluzione particolare $y_p(x)$ tramite il \textbf{Faltungsintegral} con estremo inferiore uguale a $0$.
+per definizione geometrica e analitica si ha sempre:
+\[ y_p(0) = 0 \quad \text{e} \quad y_p'(0) = 0 \]
+
+Se le anfangsbedingungen hanno $\mathbf{x_0 = 0}$, $y_p$ è totalmente \textbf{neutra} nel calcolo delle costanti $A$ e $B$.
+
+\cor{Si possono quindi ricavare $A$ e $B$ imponendo le condizioni \textbf{solo} sulla parte omogenea}

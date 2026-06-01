@@ -11,13 +11,10 @@
 L'evoluzione delle architetture ARM ha portato alla coesistenza di diversi set di istruzioni.
 
 \begin{itemize}
-    \item \textbf{ARM (32-bit) (Obsoleto):} Istruzioni a lunghezza fissa di 32 bit. 
-    Garantiscono massime prestazioni ma occupano maggior spazio in memoria.
-    \item \textbf{Thumb (16-bit):} Sottoinsieme del set ARM con istruzioni a 16 bit. 
-    Ideale per ridurre il footprint della memoria (circa 30\% di risparmio), 
-    a scapito di una minore flessibilità operativa.
-    \item \textbf{Thumb-2 (16/32-bit):} Tecnologia a lunghezza variabile che combina 
-    istruzioni a 16 e 32 bit. Permette di ottenere una densità di codice simile a Thumb 
+    \item \textbf{ARM (32-bit) (Obsoleto):} 32 bit, massime prestazioni ma occupano maggior spazio in memoria.
+    \item \textbf{Thumb (16-bit):} sottoinsieme 16 bit,
+    Ideale per ridurre il footprint della memoria (circa 30\% di risparmio)
+    \item \textbf{Thumb-2 (16/32-bit):} lunghezza variabile (16 e 32 bit). Permette di ottenere una densità di codice simile a Thumb 
     con prestazioni analoghe al set ARM a 32 bit.
 \end{itemize}
 
@@ -26,15 +23,9 @@ L'evoluzione delle architetture ARM ha portato alla coesistenza di diversi set d
 
 L'Unità Aritmetico-Logica (ALU) opera esclusivamente su stringhe binarie di bit, 
 ignorando la semantica del segno (interpretazione \textit{signed} vs \textit{unsigned}).
-Tale agnosticismo è reso possibile dalla rappresentazione in complemento a due, che 
-permette di unificare le operazioni di addizione e sottrazione.
 
 \subsection{Meccanismo delle Flag (APSR)}
 \label{subsec:apsr_flags}
-
-Al termine di ogni operazione aritmetica, la ALU aggiorna meccanicamente quattro flag 
-fondamentali nel \textit{Application Program Status Register} (APSR). 
-Queste flag descrivono le proprietà del risultato binario grezzo:
 
 \begin{itemize}
     \item \textbf{N (Negative):} Riflette il bit più significativo (MSB) del risultato. Se $MSB=1$, la flag è impostata a 1.
