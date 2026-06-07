@@ -1,28 +1,35 @@
-\section{Makefiles}
+\section{Makefile}
 
-Makefiles sollten generell das Umsetzten des Codes in Maschinencode vereinfachen.
-Es ist eine \texttt{Skriptingsprache} welche grob nach dem Muster \texttt{Erzeugnis/target} : \texttt{Abhängigkeiten/Dependency} folgt. 
-Dann folgt indentiert der Befehl, um dieses Erzeugnis zu erzeugen.\\
-Wenn ein Erzeugnis keine Datei zurückgibt, muss dieser als \texttt{.PHONY} markiert werden. 
-Das verhindert, dass eine Datei mit demselben Namen das Ausführen verhindert.\\
-Am besten sieht man das an einem Beispiel:
+In eine Makefile können Abhängingkeiten definiert werden\\
+Wenn eine Datei geändert wurde, dann werden alle Operationen ausgeführt mit den Dateien, welche von
+dieser geänderten Datei abhängen
 
-\lstinputlisting[language = Make, frame=single]{code/05_makefiles/make1}
+\textbf{Il makefile viene eseguito dal basso verso l'alto!}
 
-Der Befehl \texttt{make all} baut nun das Projekt.\\
-Sind die o Dateien noch aktuell werden diese nicht erneut kompiliert. 
-Das Projektverzeichnis kann einfach durch \texttt{make clean} aufgeräumt werden.
+\subsection{Variabili}
+Le variabili vengono definite come \texttt{NAME = valore} e richiamate con \texttt{\$(NAME)}. 
+Esempio:
+\begin{lstlisting}[language=make]
+CC = clang
+CFLAGS = -c -Wall
+\end{lstlisting}
 
-\subsection{Platzhalter}
+\subsection{Regole e Dipendenze}
+La sintassi fondamentale è:
+\begin{center}
+\texttt{Target: Dipendenze} \\
+\texttt{\quad [TAB] Comando Shell}
+\end{center}
 
-In einem Makefile können auch Platzhalter verwendet werden:
-
-\begin{itemize}[itemsep=1pt, parsep=0pt]
-    \item \textbf{\$ @} Dateiname des Targets
-    \item \textbf{\$ $<$} Dateiname der ersten Dependency des aktuellen Targets
-    \item \textbf{\$ $\wedge$} Dateiname aller Dependencies des aktuellen Targets durch Leerzeichen getrennt
+\begin{itemize}
+    \item Il comando viene eseguito solo se una dipendenza è più recente del target.
+    \item Il simbolo '\texttt{\$@}' rappresenta il nome del target corrente.
+    \item È obbligatorio l'uso del tasto TAB per i comandi.
 \end{itemize}
 
-Mit diesen Mitteln kann ein Professionelleres Makefile erstellt werden, welches relativ universell eingesetzt werden kann:
+\subsection{Esempio Pratico}
+\begin{center}
+    \includegraphics[width=0.78\columnwidth]{images/dateien_abhaengigkeiten.png}
+\end{center}\vspace{-1.5em}
 
-\lstinputlisting[language = Make, frame=single]{code/05_makefiles/make2}
+\lstinputlisting[language=makefile]{code/05_makefiles/makefile}

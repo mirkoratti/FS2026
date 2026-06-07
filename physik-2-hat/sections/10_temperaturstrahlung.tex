@@ -199,64 +199,54 @@ $$ \boxed{ j_{12} = c_{12} \cdot (T_1^4 - T_2^4) = \sigma \cdot \varepsilon \cdo
 
 $$ \text{Erinnerung 1. Hauptsatz}: \quad  \Delta U = \Delta W + \Delta Q $$
 
+% --- BLOCCO 1: TESTO E FORMULE ALLINEATE CON TABULAR ---
+\begin{tabular}{@{} p{0.33\columnwidth} p{0.33\columnwidth} p{0.33\columnwidth} @{}}
+    \subsubsection{Isotherm} & \subsubsection{Isobar} & \subsubsection{Isochor} \\
+    \textbf{konstanter Temperatur} & \textbf{konstantem Druck} & \textbf{konstantem Volumen} \\
+    \vspace{0.1cm} & \vspace{0.1cm} & \vspace{0.1cm} \\ % Spazio uniforme prima delle formule
+    
+    % Prima riga di formule (Lavoro W)
+    $\displaystyle \boxed{ W_{\rm ab} = n \cdot R \cdot T \cdot \ln \Bigg( \frac{V_1}{V_2}  \Bigg) }$ & 
+    $\displaystyle \boxed{ W_{\rm ab} = p \cdot (V_2 -V_1) }$ & 
+    $\displaystyle \boxed{ W = 0 }$ \\
 
-\subsubsection{Isotherm}
+	\vspace{0.1cm} & \vspace{0.1cm} & \vspace{0.1cm} \\ % Spazio uniforme prima delle formule
+    
+    % Seconda riga di formule (Calore Q)
+    $\displaystyle \boxed{ \Delta Q_{\rm zu} = W } \quad  (\Delta U = 0)$ & 
+    $\displaystyle \boxed{ \Delta Q_{\rm zu} = n \cdot C_{mp} \cdot \Delta T }$ & 
+    $\displaystyle \boxed{ \Delta Q_{\rm zu} = n \cdot C_{mV} \cdot \Delta T }$\\
+	&& $\quad (\Delta U = \Delta Q)$
+\end{tabular}
 
-\textbf{bei konstanter Temperatur}
 
-\smallskip
-
-\begin{minipage}[c]{0.48\columnwidth}	
-	$$ \boxed{ W_{\rm ab} = n \cdot R \cdot T \cdot \ln \Bigg( \frac{V_1}{V_2}  \Bigg) }  $$
+% --- BLOCCO 2: GRAFICI TIKZ (Invariato, ma con larghezze coerenti) ---
+\noindent
+\begin{minipage}[t]{0.33\columnwidth}
+	\centering
+	\resizebox{\linewidth}{!}{\input{tikz/isotherm.tex}}
+\end{minipage}%
+\begin{minipage}[t]{0.33\columnwidth}
+	\centering
+	\resizebox{\linewidth}{!}{\input{tikz/isobar.tex}}
+\end{minipage}%
+\begin{minipage}[t]{0.33\columnwidth}
+	\centering
+	\resizebox{\linewidth}{!}{\input{tikz/isochore.tex}}
 \end{minipage}
-\hfill
-\begin{minipage}[c]{0.48\columnwidth}
-	$$ \boxed{ \Delta Q_{\rm zu} = W } \quad  (\Delta U = 0) $$
-\end{minipage}
-
-
-\subsubsection{Isobar}
-
-\textbf{bei konstantem Druck}
-
-\smallskip
-
-\begin{minipage}[c]{0.48\columnwidth}
-	$$ \boxed{ W_{\rm ab} = p \cdot (V_2 -V_1) } $$
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.48\columnwidth}
-	$$ \boxed{ \Delta Q_{\rm zu} = n \cdot C_{mp} \cdot \Delta T } $$
-\end{minipage}
-
-
-\subsubsection{Isochor}
-
-\textbf{bei konstantem Volumen}
-
-\smallskip
-
-\begin{minipage}[c]{0.4\columnwidth}
-	$$ \boxed{ W = 0 } $$
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.58\columnwidth}
-	$$ \boxed{ \Delta Q_{\rm zu} = n \cdot C_{mV} \cdot \Delta T }  \quad  (\Delta U = \Delta Q) $$
-\end{minipage}
-
 
 \subsubsection{Adiabatisch}
 
-\textbf{ohne Wärme-Austausch}
 
-\smallskip
 
-\begin{minipage}[c]{0.48\columnwidth}
+\begin{minipage}[c]{0.60\columnwidth}
+	\textbf{ohne Wärme-Austausch ($\bm{dQ = 0}$)}
 	$$ \boxed{ W_{\rm ab} = n \cdot C_{mV} \cdot \Delta T }  $$
+	$$ \boxed{ \Delta Q = 0} $$
 \end{minipage}
 \hfill
-\begin{minipage}[c]{0.48\columnwidth}
-	$$ \boxed{ \Delta Q = 0} $$
+\begin{minipage}[c]{0.35\columnwidth}
+	\resizebox{\linewidth}{!}{\input{tikz/adiabatisch.tex}}
 \end{minipage}
 
 \medskip

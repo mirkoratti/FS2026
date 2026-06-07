@@ -997,6 +997,23 @@
     morestring=[m]',
 }
 
+\lstalias{makefile}{make}
+
+
+% Makefile style per listings
+\lstdefinestyle{makefilestyle}{
+    language=makefile,
+    % === Parole chiave aggiuntive (Target comuni e variabili automatiche) ===
+    morekeywords={clean, all, install, distclean},
+    keywordstyle={[2]\color{keywordcolour!80!black}}, % Stile per variabili automatiche
+    morekeywords={[2]\$@, \$<, \$\^, \$\?},
+%   === Gestione speciale per i Tab (Fondamentali nei Makefile) ===
+    showtabs=true,              % Opzionale: mostra i tab per debuggare la sintassi
+    % Definisce un simbolo per il tab (es: una freccetta grigia)
+    tab=\color{gray!40}\makebox[0pt][l]{\tiny$\rightarrow$}\rule{0pt}{0pt},
+    tabsize=4,                   % Dimensione visiva del tab
+}
+
 \lstset{
     style=basestyle,    % base style for listings (styles are cumulative)
     style=cppstyle,     % C++ style for listings (builds on top of base style)

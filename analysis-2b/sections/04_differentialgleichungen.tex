@@ -276,6 +276,7 @@ $$ \text{\colorbox{yellow!50}{char. Gleichung:}} \quad \underbrace{1 \, \lambda^
 
 
 \subsubsection{Partikulär / Inhomogen \textrightarrow\ Störterm $\bm{f(x) \neq 0}$ \textrightarrow\ \ref{Ansatz rechte Seite}}
+\label{chap:inhomogen_n2}
 
 $$ \text{ \textbf{Faltungsintegral = Grundlösung} } \quad 
 y_p (x) = \int \limits_{x_0}^{x} \underbrace{g(x + x_0 - t)}_{\substack{(1)}} \cdot \underbrace{f(t)}_{\substack{(2)}} \, \diff t $$
@@ -408,11 +409,7 @@ $$ \text{ \textbf{Faltungsintegral = Grundlösung}} \quad
 
 \medskip
 
-\begin{tabular}{ll}
-    Vorteile:   & Störung direkt verwendet                              \\
-                & $y_p$ hat neutralen Anfang                            \\
-                & Anfangsbedingungen für y nur mit $\mathbb{H}$ lösbar 
-\end{tabular}
+Vorteile: wie \ref{chap:inhomogen_n2}
 
 
 \subsection[Ansatz rechte Seite]{Ansatz rechte Seite (Störung $\bm{f(x)\neq 0}$)}
@@ -436,7 +433,7 @@ $$ \sum\limits _{k=0}^n a_k \, y^{(k)} = \e^{\alpha x} p_m(x) $$
 \begin{tabular}{ll}
     a)  & wenn $\alpha$ \textbf{keine} Lösung der char. Gleichung ist           \\    \medskip
         & \textrightarrow\ $y_p = \e^{\alpha x} q_m(x)$                         \\
-    b)  & wenn $\alpha$ \textbf{$\bm{r}$-fache} Lösung der char. Gleichung ist  \\
+    b)  & wenn $\alpha$ \textbf{$\bm{r}$-fache} Lösung der char. Gleichung ist (Resonanz) \\
         & \textrightarrow\ $y_p = \e^{\alpha x} x^r \, q_m(x)$
 \end{tabular}
 
@@ -494,14 +491,14 @@ $$ \begin{matrix}
 = 
 \left(
 \begin{matrix}
-    x\\
-    y
+    a & b \\
+    c & d
 \end{matrix}
 \right)
 \left(
 \begin{matrix}
-    a & b \\
-    c & d
+    x\\
+    y
 \end{matrix}
 \right)
 + 
@@ -525,3 +522,14 @@ Vereinfacht sich zu:
 
 \textrightarrow\ Lösbar wie in Abschnitt \ref*{Lineare DGL n=2} beschrieben \\
 \textrightarrow\ Wenn $x$ gefunden wurde kann $y = \frac{\dot{x}- ax-e}{b \neq 0}$ verwendet werden
+
+\subsubsection{Anfangsbedingungen}
+
+Come anfangsbedingungen si dispone di $(x(x_0), y(x_0))$
+
+Per ottenere le anfangbedingungen riposetto ad una sola variabile:\vspace{-1em}
+
+\begin{align*}
+    \text{\RomanNumeralCaps{1}}: \qquad & (x(x_0), \dot{x}(x_0)) \quad \text{mit} \quad \dot{x}(x_0) = ax(x_0) + by(x_0) + e(x_0)\\
+    \text{\RomanNumeralCaps{2}}: \qquad & (y(x_0), \dot{y}(x_0)) \quad \text{mit} \quad \dot{y}(x_0) = cx(x_0) + dy(x_0) + f(x_0)\\
+\end{align*}\vspace{-3em}

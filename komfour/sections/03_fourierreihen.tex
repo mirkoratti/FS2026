@@ -100,27 +100,27 @@ $\bm{f(t)}$\\auf dem Intervall [0 ; T)}
 \multirow{2}{*}{$f(t)$ gerade}   & $\displaystyle a_n = \frac{4}{T} \int_{0}^{\frac{T}{2}} f(t) \cos(n \omega_f t) dt$ & $b_n = 0$ \\
                                  & \color{blue}{$\text{Im}(c_k) = 0$} & \color{blue}{$c_n = \frac{a_n}{2}$ (reell)} \\ \hline
 \multirow{2}{*}{$f(t)$ ungerade} & $\displaystyle a_n = 0$ & $\displaystyle b_n = \frac{4}{T} \int_{0}^{\frac{T}{2}} f(t) \sin(n \omega_f t) dt$ \\
-                                 & \color{blue}{$\text{Re}(c_k) = 0$} & \color{blue}{$c_n = j \frac{b_n}{2}$ (imaginär)} \\ \hline
+                                 & \color{blue}{$\text{Re}(c_k) = 0$} \qquad \color{blue}{$c_0 = 0$} & \color{blue}{$c_n = -j \frac{b_n}{2}$ (imaginär)} \\ \hline
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
 \subsubsection{Linearität}
 \begin{center}
-    \crd{$f(t) \text{ und } g(t)$ mussen das gleiche periode $T$ haben.}
+    \crd{$f(t) \text{ und } g(t)$ müssen das gleiche Periode $T$ haben.}
 \end{center}
 
-$f(x)$ mit Koeffizienten $a_n^{(f)} , \, b_n^{(f)}$ \qquad $g(x)$ mit Koeffizienten $a_n^{(g)} , \, b_n^{(g)}$ \\
-\textrightarrow\ $h(t) = r \cdot f(t) + s \cdot g(t)$ mit festem $s, \, r \in \mathbb{R}$
+$h(t) = r \cdot f(t) + s \cdot g(t)$ mit festem $s, \, r \in \mathbb{R}$
 
-$$ a_n^{(h)} = r \cdot a_n^{(f)} + s \cdot a_n^{(g)} \qquad \qquad b_n^{(h)} = r \cdot b_n^{(f)} + s \cdot b_n^{(g)} $$
+$g(x)$ o $f(x)$ potrebbero anche essere numeri costanti ($a_0 \in \mathbb{R}, \, a_n = b_n = 0$)
 
+$$ a_n^{(h)} = r \cdot a_n^{(f)} + s \cdot a_n^{(g)} \qquad b_n^{(h)} = r \cdot b_n^{(f)} + s \cdot b_n^{(g)} \qquad \cbl{c_k^{(h)} = r \cdot c_k^{(f)} + s \cdot c_k^{(g)}}$$
 
 \subsubsection{Zeitstreckung / -stauchung / -spiegelung ("Ähnlichkeit")}
 
-$g(t) = f(r \cdot t)$ mit $0 \neq r \in \mathbb{R}$ \qquad \cor{$\omega_g = \frac{2 \pi}{T_g}$ in Basisfunktionen! ($\sin / \cos$)}
+$g(t) = f(r \cdot t)$ mit $0 \neq r \in \mathbb{R}$ \qquad \crd{$\omega_g = \frac{2 \pi}{T_g} = \abs{r} \cdot \omega_f$ in Basisfunktionen! ($\sin / \cos$)}
 
-$$ a_n^{(g)} = a_n^{(f)} \qquad \qquad b_n^{(g)} = \sgn(r) \cdot b_n^{(f)} $$
-
+\[ a_n^{(g)} = a_n^{(f)} \qquad \qquad b_n^{(g)} = \sgn(r) \cdot b_n^{(f)} 
+\qquad \qquad \cbl{c_k^{(g)} = c_{k\cdot \sgn(r)}^{(f)}}\]
 
 \subsubsection{Zeitverschiebung}
 $g(t) = f(t + t_0)$

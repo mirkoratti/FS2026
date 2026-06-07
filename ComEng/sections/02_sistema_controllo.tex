@@ -37,7 +37,8 @@ Lo \textbf{Stack} è una memoria temporanea utilizzata per variabili locali e sa
 \subsection{NVIC Special Features}
 \begin{itemize}
     \item \textbf{Tail-Chaining:} IRQ a bassa priorità è pendente al termine 
-    di ISR attiva, la CPU salta l'Unstacking e lo Stacking. Fa solo un nuovo Vector Fetch ($\rightarrow$ transizione di soli \textbf{6 cicli}).
+    di ISR attiva, la CPU salta l'Unstacking e lo Stacking. Fa solo un nuovo Vector Fetch 
+    (da 15 $\rightarrow$ transizione di soli \textbf{6 cicli}).
     \item \textbf{Late Arrival:} IRQ ad alta priorità si attiva durante lo stacking 
     di un IRQ a bassa priorità, la CPU completa stacking ma esegue direttamente Vector Fetch dell'IRQ più urgente.
     \item \textbf{Pop-Preemption:} IRQ arriva durante l'Unstacking (Pop) finale, l'hardware abbandona il Pop e devia subito alla nuova ISR in soli \textbf{6 cicli}.
