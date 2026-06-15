@@ -103,7 +103,7 @@ $$ y' = f(x \, ; \, y) = ( \text{Faktor in } x) * ( \text{Faktor in } y) = \tild
     (3) & $\int \limits_{y_0}^{y} \frac{\diff \tilde{y}}{g(y)} =$ gelöstes Integral                                                     \\
     (4) & Integral links lösen = gelöstes Integral rechts                                                                               \\
     (5) & Gleichung auflösen nach $y$ \textrightarrow\ Formel in $x$                                                                    \\
-    (6) & Singularitätstest um weitere Lösungen zu finden (vedi \ref{chap:sing_erg})                                                                              \\
+    (6) & \crd{\textbf{Singularitätstest} um weitere Lösungen zu finden (vedi \ref{chap:sing_erg})}\\
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
@@ -332,9 +332,10 @@ $$ y'' + a_1 \, y' + a_0 \, y = \e^{b x} \cgn{p_n(x)} $$
 \begin{tabular}{ll}
     a)  & wenn $b$ \textbf{keine} Lösung der char. Gleichung ist    \\  \medskip
         & \textrightarrow\ $y_p = e^{b x} \cbl{q_n(x)}$             \\
-    b)  & wenn $b$ \textbf{einfache} Lösung der char. Gleichung ist \\  \medskip
+    b)  & wenn $b$ \textbf{einfache} Lösung der char. Gleichung ist (\cor{Resonanz}) \\  \medskip
         & \textrightarrow\ $y_p = \e^{b x} x \, \cbl{q_n(x)}$       \\
-    c)  & wenn $b$ \textbf{doppelte} Lösung der char. Gleichung ist ($D=0, \, \lambda_1 = \lambda_2$) \\
+    c)  & wenn $b$ \textbf{doppelte} Lösung der char. Gleichung ist ($D=0, \, \lambda_1 = \lambda_2$)\\
+        & (\cor{Resonanz ordnung 2}) \\
         & \textrightarrow\ $y_p = \e^{b  x} x^2 \, \cbl{q_n(x)}$
 \end{tabular}
 
@@ -433,7 +434,7 @@ $$ \sum\limits _{k=0}^n a_k \, y^{(k)} = \e^{\alpha x} p_m(x) $$
 \begin{tabular}{ll}
     a)  & wenn $\alpha$ \textbf{keine} Lösung der char. Gleichung ist           \\    \medskip
         & \textrightarrow\ $y_p = \e^{\alpha x} q_m(x)$                         \\
-    b)  & wenn $\alpha$ \textbf{$\bm{r}$-fache} Lösung der char. Gleichung ist (Resonanz) \\
+    b)  & wenn $\alpha$ \textbf{$\bm{r}$-fache} Lösung der char. Gleichung ist (\cor{Resonanz ordnung $r$}) \\
         & \textrightarrow\ $y_p = \e^{\alpha x} x^r \, q_m(x)$
 \end{tabular}
 
@@ -448,7 +449,7 @@ $$ \sum\limits _{k=0}^n a_k \, y^{(k)} = \e^{\alpha x} \Big( p_m(x) \, \cos(\bet
 \begin{tabular}{ll}
     a)  & wenn $\alpha + \jimg \beta$ \textbf{keine} Lösung der char. Gleichung ist                                     \\   \medskip
         & \textrightarrow\ $y_p = \e^{\alpha x} \Big( r_m(x) \, \cos(\beta x) + s_m(x) \, \sin(\beta x) \Big)$          \\
-    b)  & wenn $\alpha + \jimg \beta$ \textbf{$\bm{r}$-fache} Lösung der char. Gleichung ist                            \\
+    b)  & wenn $\alpha + \jimg \beta$ \textbf{$\bm{r}$-fache} Lösung der char. Gleichung ist (\cor{Resonanz ordnung $r$})                      \\
         & \textrightarrow\ $y_p = \e^{\alpha x} \, x^r \, \Big( r_m(x) \, \cos(\beta x) + s_m(x) \, \sin(\beta x) \Big)$
 \end{tabular}
 

@@ -187,22 +187,19 @@
     
     
 \subsection{Integraltionsregeln}
+% \begin{minipage}[t]{0.4\columnwidth}
+%     \subsubsection{Linearität}
 
-\vspace{-0.2cm}
+%     \vspace{-0.5cm}
 
-\begin{minipage}[t]{0.4\columnwidth}
-    \subsubsection{Linearität}
+%     $$ \int \limits_{a}^{b} \alpha f(x) \, \diff x = \alpha \int \limits_{a}^{b} f(x) \, \diff x $$
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{0.58\columnwidth}
+%     \subsubsection{Elementartransformation}
 
-    \vspace{-0.5cm}
-
-    $$ \int \limits_{a}^{b} \alpha f(x) \, \diff x = \alpha \int \limits_{a}^{b} f(x) \, \diff x $$
-\end{minipage}
-\hfill
-\begin{minipage}[t]{0.58\columnwidth}
-    \subsubsection{Elementartransformation}
-
-    $$ \int f(\alpha \, x + \beta) \, \diff x = \frac{1}{\alpha} \, F(\alpha \, x + \beta) $$
-\end{minipage}
+%     $$ \int f(\alpha \, x + \beta) \, \diff x = \frac{1}{\alpha} \, F(\alpha \, x + \beta) $$
+% \end{minipage}
 
 
 \subsubsection{Partielle Integration (Produktregel)}
@@ -219,39 +216,39 @@ Partielle Integration darf mehrfach angewendet werden. \\
 \textbf{LIATE} - Priorität für $g$ - funzione da derivare (non $\dots'$ nella forma base):
 
 
-\subsubsection{Substitution}
+% \subsubsection{Substitution}
 
-\vspace{-0.2cm}
+% \vspace{-0.2cm}
 
-$$ \int f(x) \, dx = \int f(g(t)) \cdot g'(t) \, \diff t \qquad \text{ \textrightarrow\ siehe Beispiel} $$
+% $$ \int f(x) \, dx = \int f(g(t)) \cdot g'(t) \, \diff t \qquad \text{ \textrightarrow\ siehe Beispiel} $$
 
-\textbf{\crd{Integrationsgrenzen anpassen!} (ev. mit Umkehrfunktion)} 
-
-
-\example{Substitution}
-
-\begin{tabular}{ll}
-    $\int \limits_0^{\sqrt{\pi}} x^3 \cdot \cos(x^2) \, \diff x$    & \cbl{Substitution: $a = x^2$} \crd{ \textbf{auch auf Grenzen anwenden!}}  \\
-                                                                    & \cbl{$\diff a = 2 \, x \cdot \, \diff x$ \textrightarrow\ 
-                                                                     $\diff x = \frac{\diff a}{2x} = \frac{\diff a}{2 \sqrt{a}} $}  \\
-\end{tabular}
-
-$\int \limits_{\crd{0}}^{\crd{\pi}} a \, \sqrt{a} \cdot \cos(a) \frac{\diff a}{2 \sqrt{a}} 
-= \int \limits_{\crd{0}}^{\crd{\pi}} a \, \sqrt{a} \cdot \cos(a) \, \frac{1}{2} \frac{1}{\sqrt{a}} \, \diff a 
-= \frac{1}{2} \int \limits_{\crd{0}}^{\crd{\pi}} a \cdot \cos(a) \, \diff a = ... $
+% \textbf{\crd{Integrationsgrenzen anpassen!} (ev. mit Umkehrfunktion)} 
 
 
-\subsubsection{Spezielle Regeln (Faktor in Integral = Ableitung)}		
+% \example{Substitution}
 
-\vspace{-0.2cm}
+% \begin{tabular}{ll}
+%     $\int \limits_0^{\sqrt{\pi}} x^3 \cdot \cos(x^2) \, \diff x$    & \cbl{Substitution: $a = x^2$} \crd{ \textbf{auch auf Grenzen anwenden!}}  \\
+%                                                                     & \cbl{$\diff a = 2 \, x \cdot \, \diff x$ \textrightarrow\ 
+%                                                                      $\diff x = \frac{\diff a}{2x} = \frac{\diff a}{2 \sqrt{a}} $}  \\
+% \end{tabular}
 
-\renewcommand{\arraystretch}{2.3}
-\begin{tabular}{ll}
-    Allg. Potenzregel   & $\int f'(x) \cdot f(x)^{\alpha} \, \diff x = \frac{f(x)^{\alpha + 1}}{\alpha + 1} + C \quad   (\alpha \neq -1)$   \\
-    Allg. Log-Regel     & $\int f'(x) \cdot \frac{1}{f(x)} \, \diff x = \int \frac{f'(x)}{f(x)} \, \diff x = \ln(\vert f(x) \vert ) + C$    \\
-    Allg. Exp-Regel     & $\int f'(x) \cdot \e^{f(x)} \, \diff x = \e^{f(x)} + C$
-\end{tabular}				
-\renewcommand{\arraystretch}{1}
+% $\int \limits_{\crd{0}}^{\crd{\pi}} a \, \sqrt{a} \cdot \cos(a) \frac{\diff a}{2 \sqrt{a}} 
+% = \int \limits_{\crd{0}}^{\crd{\pi}} a \, \sqrt{a} \cdot \cos(a) \, \frac{1}{2} \frac{1}{\sqrt{a}} \, \diff a 
+% = \frac{1}{2} \int \limits_{\crd{0}}^{\crd{\pi}} a \cdot \cos(a) \, \diff a = ... $
+
+
+% \subsubsection{Spezielle Regeln (Faktor in Integral = Ableitung)}		
+
+% \vspace{-0.2cm}
+
+% \renewcommand{\arraystretch}{2.3}
+% \begin{tabular}{ll}
+%     Allg. Potenzregel   & $\int f'(x) \cdot f(x)^{\alpha} \, \diff x = \frac{f(x)^{\alpha + 1}}{\alpha + 1} + C \quad   (\alpha \neq -1)$   \\
+%     Allg. Log-Regel     & $\int f'(x) \cdot \frac{1}{f(x)} \, \diff x = \int \frac{f'(x)}{f(x)} \, \diff x = \ln(\vert f(x) \vert ) + C$    \\
+%     Allg. Exp-Regel     & $\int f'(x) \cdot \e^{f(x)} \, \diff x = \e^{f(x)} + C$
+% \end{tabular}				
+% \renewcommand{\arraystretch}{1}
 
 
 \subsection{Wichtige Integrale}
@@ -275,3 +272,32 @@ $\int \limits_{\crd{0}}^{\crd{\pi}} a \, \sqrt{a} \cdot \cos(a) \frac{\diff a}{2
     \end{tabular}
     \renewcommand{\arraystretch}{1}
 \end{center}
+
+\subsection*{Simmetrie Traslate nelle Serie di Fourier ($t_0 \neq 0$)}
+Quando $f(t)$ è simmetrica rispetto a un punto traslato $t_0$, i coefficienti si annullano dove la sinusoide di controllo ($\cos$ o $\sin$) è \textbf{dispari} rispetto a quel punto (ovvero quando si annulla in $t_0$).
+
+\smallbreak
+
+\paragraph{Test del punto di simmetria:}
+Sostituire $t = t_0$ nell'argomento di coseno e seno:
+\begin{itemize}
+    \item \textbf{Se $f(t)$ è PARI rispetto a $t_0$}:
+    \begin{itemize}
+        \item $a_n = 0 \iff \cos(n\omega_f \cdot \cor{t_0}) = 0$
+        \item $b_n = 0 \iff \sin(n\omega_f \cdot \cor{t_0}) = 0$
+    \end{itemize}
+    \item \textbf{Se $f(t)$ è DISPARI rispetto a $t_0$}:
+    \begin{itemize}
+        \item $a_n = 0 \iff \cos(n\omega_f \cdot \cor{t_0}) = \pm 1$ (picco $\rightarrow$ pari rispetto a $\cor{t_0}$)
+        \item $b_n = 0 \iff \sin(n\omega_f \cdot \cor{t_0}) = \pm 1$ (picco $\rightarrow$ pari rispetto a $\cor{t_0}$)
+    \end{itemize}
+\end{itemize}
+
+\subsection[Lokale Transformationen]{Lokale Transformationen (Spezialfälle di $f'(z)$):}
+\label{chap:lokale_transformationen}
+\begin{itemize}
+    \item $f'(z) = -1 \quad \textrightarrow$ \textbf{Punktspiegelung} 
+    \item $f'(z) = \jimg \quad \textrightarrow$ \textbf{Reine Drehung}, Drehwinkel $= \frac{\pi}{2}$
+    \item $f'(z) = -\jimg \quad \textrightarrow$ \textbf{Reine Drehung}, Drehwinkel $= -\frac{\pi}{2}$ (o $\frac{3\pi}{2}$)
+    \item $f'(z) = c \in \mathbb{R}^+ \quad \textrightarrow$ \textbf{Reine Streckung} Streckfaktor $= c$
+\end{itemize}

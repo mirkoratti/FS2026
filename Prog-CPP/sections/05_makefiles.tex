@@ -2,9 +2,16 @@
 
 In eine Makefile können Abhängingkeiten definiert werden\\
 Wenn eine Datei geändert wurde, dann werden alle Operationen ausgeführt mit den Dateien, welche von
-dieser geänderten Datei abhängen
+dieser geänderten Datei abhängen\smallbreak
 
-\textbf{Il makefile viene eseguito dal basso verso l'alto!}
+\paragraph{Ordine di esecuzione}
+\begin{enumerate}
+    \item \textbf{Target di partenza:} primo target utile del file come obiettivo finale.
+    \item \textbf{Analisi da sinistra a destra:} Esamina i prerequisiti del target corrente partendo dal primo a sinistra.
+    \item \textbf{Discesa ricorsiva:} Se un prerequisito è a sua volta il target di un'altra regola, \texttt{make} entra in ricorsione per risolvere la sotto-regola.
+    \item \textbf{Controllo temporale (Timestamp):} Il comando di una regola viene eseguito solo se il file sorgente (dipendenza) è più recente del file da generare (target).
+    \item \textbf{Risoluzione e risalita:} Una volta aggiornati tutti i prerequisiti da sinistra a destra, \texttt{make} risale la catena ed esegue il comando del target principale.
+\end{enumerate}
 
 \subsection{Variabili}
 Le variabili vengono definite come \texttt{NAME = valore} e richiamate con \texttt{\$(NAME)}. 
@@ -22,7 +29,6 @@ La sintassi fondamentale è:
 \end{center}
 
 \begin{itemize}
-    \item Il comando viene eseguito solo se una dipendenza è più recente del target.
     \item Il simbolo '\texttt{\$@}' rappresenta il nome del target corrente.
     \item È obbligatorio l'uso del tasto TAB per i comandi.
 \end{itemize}

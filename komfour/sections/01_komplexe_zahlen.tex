@@ -343,45 +343,34 @@ Man muss nun \textbf{beide Nullstellen} bzw. ein \textbf{reelles quadratisches P
 
 \columnbreak
 
-
-\subsection{Überlagerung von sinusförmigen Schwingungen}
+\subsection{Sovrapposizione di oscillazioni sinusoidali ($\mathbf{\omega}$ = const)}
 
 \vspace{-0.2cm}
+\[ \text{Oscillazione reale:} \quad x(t) = A \cdot \sin(\omega t + \varphi) \quad \text{con } \omega = \frac{2 \pi}{T} \]
+\vspace{-1.5em}
 
-\[\text{Darstellung einer Schwingung:} \quad A \cdot \sin(\omega t + \varphi) \quad \text{mit } \omega = \frac{2 \pi}{T} \]\vspace{-2em}
-
-\[A \cdot \sin(\omega t + \varphi) \quad \textrightarrow \quad \IM\left\{
-A \cdot \big[ \cos(\omega t + \varphi) + \jimg \sin(\omega t + \varphi) \big] \right\} = A \cdot \e^{\jimg (\omega t + \varphi)}\]\vspace{-2em}
-
-\[A \cdot \cos(\omega t + \varphi) \quad \textrightarrow \quad \RE\left\{ 
-A \cdot \big[ \cos(\omega t + \varphi) + \jimg \sin(\omega t + \varphi) \big] \right\} = A \cdot \e^{\jimg (\omega t + \varphi)}\]\vspace{-1.7em}
+\[ \sin(\omega t + \varphi) = \IM\left\{ \e^{\jimg (\omega t + \varphi)} \right\} \quad \text{e} \quad \cos(\omega t + \varphi) = \RE\left\{ \e^{\jimg (\omega t + \varphi)} \right\} \]
+\vspace{-1.5em}
 
 \includegraphics[width=\columnwidth]{images/summe-schwingungen.PNG}
 
 \smallskip
 
-\begin{tabular}{lll@{}}
-    Komplexe Amplitude $z_i(0)$ & $z_i(0) = A \cdot \e^{\jimg \varphi_i}$                                                                                       & (zeitunabhängig)  \\
-    'Schwingung' / 'Rotation'   & $z(t) = A \cdot \e^{\jimg (\omega t + \varphi)} = \underbrace{A \cdot \e^{\jimg \varphi}}_{z_i(0)} \cdot \e^{\jimg \omega t}$ & (zeitabhängig)
+\begin{tabular}{lll}
+    Ampiezza complessa  & $\underline{A} = A \cdot \e^{\jimg \varphi}$ & \crd{(\textbf{per} $\bm{t=0}$)} \\
+    Oscillazione complessa & $z(t) = A \cdot \e^{\jimg (\omega t + \varphi)} = \underline{A} \cdot \e^{\jimg \omega t}$ & (dipendente dal tempo)
 \end{tabular}
 
+\smallbreak
 
-\para{Überlagerung gleichfrequenter Schwingungen ($\bm{z(t) = z_1(t) + z_2(t)}$)}
+\para{Sovrapposizione di oscillazioni isofrequenziali ($z(t) = z_1(t) + z_2(t)$)}
 \begin{itemize}
-    \item Überlagerung gleichfrequenter Schwingungen entspricht grafischer Addition der
-    beiden 'Zeiger' zu jedem Zeitpunkt.
-    \item La somma va eseguita solamente usando $\sin \text{o} \cos$, scegliere uno dei
-    2 e trasformare l'altro usando prorietà trigonometriche (\ref{chap:trigo-beziehungen})
-    \item Per trovare $A$: exp $\rightarrow$ kartesische, eseguire $\sum$, risultato da kartesiche $\rightarrow$ exp
+    \item \textbf{Principio:} Equivale alla somma grafica dei vettori rotanti nel piano complesso.
+    \item \textbf{Prerequisito:} Uniformare i segnali tutti in $\sin$ o tutti in $\cos$ (usando \ref{chap:trigo-beziehungen}).
+    \item \textbf{Metodo:} $\underline{A}_{res} = \underline{A}_1 + \underline{A}_2$. Convertire da polare ($A\e^{\jimg\varphi}$) a cartesiano ($x + \jimg y$), sommare componente per componente e riconvertire in polare per trovare l'ampiezza $A_{res}$ e la fase $\varphi_{res}$ finali.
 \end{itemize}
-
-
 
 \smallskip
 
-\renewcommand{\arraystretch}{1.3}
-\begin{tabular}{lll}
-    reelle \cor{Amplitude}:   & $A = \vert A_1 \cdot \e^{\jimg \varphi_1} + A_2 \cdot \e^{\jimg \varphi_2} \vert =\cor{a} \cdot e^{\jimg\alpha}$      & (Betrag)  \\
-    \cbl{Nullphasenwinkel}    & $\varphi_0 = \arg(A_1 \cdot \e^{\jimg \varphi_1} + A_2 \cdot \e^{\jimg \varphi_2}) =a \cdot e^{\jimg\cbl{\mathbf{\alpha}}}$   & (Winkel)	
-\end{tabular}
-\renewcommand{\arraystretch}{1}
+\textbf{Esempio pratico di calcolo:}
+\[ \underline{A}_1 = 2\e^{\jimg 0} = 2 \quad \text{e} \quad \underline{A}_2 = 2\e^{\jimg \frac{\pi}{2}} = 2\jimg \quad \longrightarrow \quad \underline{A}_{res} = 2 + 2\jimg = 2\sqrt{2}\cdot \e^{\jimg \frac{\pi}{4}} \]\vspace{-1em}

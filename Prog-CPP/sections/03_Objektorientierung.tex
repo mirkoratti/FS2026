@@ -199,13 +199,25 @@ Assertions sollten Annahmen über korrekte Wertebelegung darstellen.
 Sie sind kein C spezifisches Konzept und sollten \textbf{nur zu Testzwecken} eingesetzt werden. 
 Im Releasebuild sollten sie deaktiviert werden. 
 Dafür gibt es spezifische Präprozessorflags.
-Der Header \textbf{$<$assert.h$>$} bzw. \textbf{$<$cassert$>$} stellt hierfür ein Präprozessor-Makro \lstinline[language=C++]|assert(Bedingung)| zur Verfügung, um solche Zusicherungen auszudrücken.\\
+Der Header \textbf{$<$cassert$>$} stellt hierfür ein Präprozessor-Makro \lstinline[language=C++]|assert(Bedingung)| zur Verfügung, um solche Zusicherungen auszudrücken.\\
 \textbf{Beispiel}:
 
-\lstinputlisting{code/03_Objektorientierung/assertions.cpp}
+\lstinputlisting{code/03_Objektorientierung/assertions.cpp}\vspace{-1em}
 
-Das obige Beispiel hat eine Assertion. 
-Diese würde im Test, falls ein Nullpointer übergeben wird ein Fehler ausgegeben.
+il programma viene interrotto se la condizione all'interno di \texttt{assert()} è \texttt{false}.
+
+\medbreak
+
+\noindent
+\paragraph{Messaggio di interruzione programma}
+
+\begin{lstlisting}
+<nome_file>:<linea>: <scope>::<nome_funzione>(<tipi_parametri>): Assertion '<condizione_logica>' failed.
+
+// Esempio concreto (es. Classe Torus): // 
+
+torus.cpp:12: Torus::Torus(double, double): Assertion 'smallR > 0.0 && smallR < bigR' failed.
+\end{lstlisting}
 
 \section{This-Pointer}
 
@@ -401,9 +413,7 @@ Mit \textbf{private} wird alles private (nicht sehr nützlich).
     \input{tikz/sichtbarkeit.tex}
 }
 
-Wird eine Vererbung private durchgeführt, sind keine Attribute oder Methoden mehr sichtbar.
-
-Attribute soll nie \lstinline[language=C++]|protected| sein
+Wird eine Vererbung private durchgeführt, sind keine Attribute oder Methoden mehr sichtbar. Attribute soll nie \lstinline[language=C++]|protected| sein
 \subsubsection{Constructor / Destructor chaining}
 
 \par{Logica dei Costruttori (CTOR)}
@@ -411,8 +421,13 @@ Attribute soll nie \lstinline[language=C++]|protected| sein
     \item \textbf{Principio di Responsabilità:} Il costruttore di una classe inizializza esplicitamente \textbf{solo i propri attributi}.
     \item \textbf{Delegazione:} Per gli attributi della classe base, viene invocato il costruttore della classe base stessa (la base 'si occupa delle proprie faccende').
     \item \textbf{Regola di Priorità:} Gli elementi della classe base devono essere \textbf{sempre inizializzati per primi}.
+    \item \textbf{Invocazione Implicita vs Esplicita:} Se il costruttore della classe 
+    figlio non chiama esplicitamente un costruttore della classe padre tramite la 
+    \textit{initializer list}, il compilatore invocherà automaticamente il 
+    \textbf{costruttore di default} della classe padre. Se invece si desidera utilizzare un costruttore specifico (ad esempio con parametri), questo deve essere richiamato esplicitamente.
 \end{itemize}
 
+\columnbreak
 
 \lstinputlisting{code/03_Objektorientierung/ctor_unterklasse.cpp}
 
@@ -420,7 +435,7 @@ Attribute soll nie \lstinline[language=C++]|protected| sein
 \begin{itemize}
     \item \textbf{Ordine Inverso:} I distruttori vengono eseguiti nell'ordine esattamente opposto ai costruttori.
     \item \textbf{Ordine di Esecuzione:} Dal basso verso l'alto (Sottoclasse $\rightarrow$ Classe Base).
-    \item I parent DTOR vengono chiamati automaticamente dal compilatore
+    \item \textbf{Generazione e Chiamata Automatica:} Anche se il distruttore non viene definito esplicitamente nella classe figlio, il compilatore ne genera automaticamente uno implicito. In ogni caso, dopo aver eseguito il corpo del distruttore della classe figlio, il compilatore chiama \textbf{sempre e automaticamente} il distruttore della classe padre.
 \end{itemize}
 
 \subsection{Überschreiben von Methoden}
@@ -499,7 +514,7 @@ L'RTTI permette di identificare il tipo di un oggetto durante l'esecuzione. Si u
 
 L'implementazione tecnica del polimorfismo e del RTTI si basa sulla \textbf{V-Table}:
 \begin{itemize}
-    \item Ogni classe polimorfa possiede una V-Table contenente i puntatori alle sue funzioni virtuali.
+    \item Ogni classe polimorfa possiede una V-Table contenente i puntatori alle suas funzioni virtuali.
     \item Ogni istanza della classe contiene un puntatore nascosto (\textbf{V-pointer}) che punta alla V-Table della propria classe.
     \item A runtime, l'istanza utilizza il V-pointer per risolvere l'indirizzo della funzione corretta.
 \end{itemize}
@@ -513,7 +528,11 @@ Se un array di puntatori alla classe base contiene oggetti di diverse sottoclass
     \includegraphics[width=\linewidth]{images/vtable.png}
 \end{minipage}
 
-
+Attenzione, nelle memory-maps le child classes contengono \textbf{sempre} il puntatore al 
+\textbf{proprio distruttore} posizionato all'interno della V-Table. 
+Se il distruttore nella classe base è dichiarato come \lstinline[language=C++]{virtual}, 
+il compilatore garantisce che il primo slot della V-Table punti al distruttore specifico 
+della classe derivata (anche non dichiarato esplicitamente)
 
 \subsection{Abstrakte Klassen}
 

@@ -8,20 +8,6 @@
     \item \textbf{Nota:} L'ordine dei \texttt{case} è rilevante per l'efficienza della ricerca.
 \end{itemize}
 
-\subsubsection{Flusso di Controllo in Assembly}
-\begin{itemize}
-    \item \textbf{Selezioni (If/Else):} Si utilizza un \textbf{salto in avanti} con la \textbf{condizione invertita} rispetto al C (se la condizione falsa, salto oltre il blocco \textit{then}).
-    \item \textbf{Iterazioni (Loop):} Si utilizza un \textbf{salto all'indietro} alla fine del ciclo, mantenendo la \textbf{condizione assembly come in C} (salto all'inizio se la condizione è ancora vera).
-\end{itemize}
-
-% \subsubsection{Tecniche di Ottimizzazione}
-% \begin{itemize}
-%     \item \textbf{Loop Unrolling:} Tecnica che consiste nel ripetere il corpo del loop 
-%     per ridurre l'overhead dei \textit{branch} e degli incrementi del contatore.
-%     \texttt{\#pragma unroll (n)}
-%     \item \textbf{Pointers (Stackless):} L'uso dei registri invece dello stack per manipolare i puntatori è significativamente più veloce (spesso più del doppio).
-% \end{itemize}
-
 \subsubsection{Efficienza delle Strutture Dati}
 \begin{itemize}
     \item \textbf{Array Locali:} Molto \textbf{inefficienti}. 

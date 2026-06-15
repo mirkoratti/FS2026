@@ -185,6 +185,22 @@ Daraus resultiert die Gesamtdauer $t$ für den Prozess:
 t = \frac{q_f \cdot \rho \cdot \left(x_2^2 - x_1^2\right)}{2 \cdot \lambda_Q \cdot \Delta T}
 \end{equation*}
 
+\subsection{Doppelwägung-Methode (Aria vs. Liquido)}
+Quando viene fornita la forza risultante sia in aria ($F_{\text{res, Luft}}$) sia in un liquido ($F_{\text{res, Flüssigkeit}}$), bisogna considerare che il corpo subisce la spinta idrostatica dell'aria anche durante la prima pesata.
+
+
+Uguagliando le espressioni delle forze risultanti nelle due condizioni, si ricava la 
+formula diretta per il volume:
+\[
+V_K = \frac{F_{\text{res, Luft}} - F_{\text{res, Flüssigkeit}}}{g \cdot (\rho_{\text{Flüssigkeit}} - \rho_{\text{Luft}})}
+\]
+
+Una volta ottenuto il volume $V_K$, la forza peso esatta (nel vuoto) si calcola riaggiungendo la spinta dell'aria alla misura effettuata in aria:
+\[
+F_G = F_{\text{res, Luft}} + \rho_{\text{Luft}} \cdot V_K \cdot g
+\]
+
+
 \section{Sistemi Termodinamici}
 Un sistema termodinamico è un sistema fisico limitato spazialmente per il quale è possibile stabilire un bilancio energetico (e di massa, se aperto).
 

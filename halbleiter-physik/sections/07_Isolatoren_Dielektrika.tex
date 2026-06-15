@@ -42,61 +42,64 @@
 		\end{minipage}
 		
 
-\subsection{Piezolektrizität}
-	\subsubsection{Bedingungen}
-		Piezokristalle dürfen nicht zentrosymmetrisch sein:
+\subsection{Piezoelektrizität}
+    \subsubsection{Bedingungen}
+        Piezokristalle dürfen nicht zentrosymmetrisch sein:
+        
+        \vspace{2mm}
+        \noindent
+        \begin{tabular}{cc}
+            \includegraphics[width=0.45\linewidth]{Bilder/zentro_Kristall} & 
+            \includegraphics[width=0.45\linewidth]{Bilder/piezo_kristall} \\
+            \makecell[c]{Zentrosymmetrischer Kristall \\ \textbf{Kein Piezo-Effekt}} & 
+            \makecell[c]{Nicht zentrosymmetrisch \\ (polarizzazione $\rightarrow$ tensione)}
+        \end{tabular}
 
-		\begin{minipage}{0.5\linewidth}
-			\includegraphics[width=0.9\linewidth]{Bilder/zentro_Kristall}
+    \subsubsection{Arten}
+        \noindent
+        \begin{tabular}{cc}
+            \includegraphics[width=0.45\linewidth]{Bilder/piezo-effekt} & 
+            \includegraphics[width=0.45\linewidth]{Bilder/piezo-effekt-inv} \\
+            \makecell[c]{\textbf{Piezo-Effekt:} \\ Kraft induziert Spannung} & 
+            \makecell[c]{\textbf{Inv. Piezo-Effekt:} \\ Spannung ind. Verformung}
+        \end{tabular}
+        
+        \vspace{2mm}
+        \noindent \textbf{Definizione:} Si ha effetto piezoelettrico quando una deformazione meccanica porta a una polarizzazione elettrica e viceversa.
 
-			Zentrosymmetrischer Kristall
-		\end{minipage}
-		\hfill
-		\begin{minipage}{0.5\linewidth}
-			\includegraphics[width=0.9\linewidth]{Bilder/piezo_kristall}
-			
-			Nicht zentrosymmetrisch 
-			
-			(polarizzazione \textrightarrow tensione)
-		\end{minipage}
+    \subsubsection{Ferroelektrische Kristalle}
+        
+        \vspace{2mm}
+        \noindent
+        \begin{tabular}{cc}
+            \begin{minipage}{0.5\linewidth}
+				\textbf{Ferroelektrika sind piezo- und pyroelektrisch} (kein Umkehrschluss!).
+        \begin{itemize}
+            \item Ferroelektrische Kristalle besitzen anche senza campo elettrico esterno ($E_{ext}=0$) una polarizzazione residua permanente ($\vec{P} \neq \vec{0}$).
+            \item \textbf{Beispiel $\text{BaTiO}_3$:} Bei Raumtemperatur ($T < 130^\circ\text{C}$) ist es ferroelektrisch und somit automaticamente anche piezoelettrico. 
+            \item \textbf{Phasenübergang:} Über $130^\circ\text{C}$ verliert es la ferroelettricità perché lo ione $\text{Ti}^{4+}$ si sposta esattamente al centro della cella unitaria.
+        \end{itemize}
 
-	\subsubsection{Arten}
-		\begin{minipage}{0.5\linewidth}
-			\includegraphics[width=0.9\linewidth]{Bilder/piezo-effekt}
+            \end{minipage} & 
+            \begin{minipage}{0.48\linewidth}
+                \includegraphics[width=0.9\linewidth]{Bilder/batio3}
+            \end{minipage}
+        \end{tabular}
 
-			\textbf{Piezo-Effekt:} Kraft induziert Spannung
-		\end{minipage}
-		\hfill
-		\begin{minipage}{0.5\linewidth}
-			\includegraphics[width=0.9\linewidth]{Bilder/piezo-effekt-inv}
-			
-			\textbf{Inv. Piezo-Effekt:} Spannung ind. Verformung
-		\end{minipage}
+    \subsubsection{Pyroelektrische Kristalle}
+        Pyroelektrische Kristalle dehnen sich bei zunehmender Temperatur aus und verändern dabei die Abstände der Ionen und damit la polarizzazione dipendente dalla temperatura.
+        
+        \vspace{2mm}
+        \noindent \textbf{Technische Anwendung:} Pyroelektrischer Detektor (Bewegungsmelder). La variazione di temperatura del cristallo è generata dal calore radiante (infrarossi) emesso dal corpo umano o animale.
 
-	\subsubsection{Ferroelektrische Kristalle}
-		\textbf{Ferroeletrika sind piezo- und pyroelektrisch} (kein Umkehrschluss!)
-
-		\begin{minipage}{0.45\linewidth}
-			Ferroelektrische Kristalle besitzen ohne externes elektrisches Feld eine Polarisation.
-		\end{minipage}
-		\hfill
-		\begin{minipage}{0.55\linewidth}
-			\includegraphics[width=0.9\linewidth]{Bilder/batio3}
-		\end{minipage}
-		
-
-	\subsubsection{Pyroelektrische Kristalle}
-		Pyroelektrische Kristalle dehnen sich bei zunehmender Temperatur aus und 
-		verändern dabei die Abstände der Ionen und damit die Polarisation, welche messbar ist.
-		
-		\vspace{2mm}
-		Pyroelektrische Detektoren werden oft als zur Detektion von Infrarotstrahlen eingesetzt. 
-		Da diese so empfindlich auf Wärme reagieren, werden sie in Bewegungsmelder verbaut.
-
-\begin{minipage}{0.4\columnwidth}
-	\[p := \frac{\Delta P}{\Delta T}\]
-	\[\Delta P = \epsilon_0 (\epsilon_r - 1) \Delta E\]
-\end{minipage}
-\begin{minipage}{0.6\columnwidth}
-	\includegraphics[width=\linewidth]{Bilder/pyroelektrische.png}
-\end{minipage}
+        \vspace{2mm}
+        \noindent
+        \begin{tabular}{cc}
+            \begin{minipage}{0.45\linewidth}
+                \[p := \frac{\Delta P}{\Delta T}\]
+                \[\Delta P = \epsilon_0 (\epsilon_r - 1) \Delta E\]
+            \end{minipage} & 
+            \begin{minipage}{0.5\linewidth}
+                \includegraphics[width=\linewidth]{Bilder/pyroelektrische.png}
+            \end{minipage}
+        \end{tabular}
