@@ -8,8 +8,7 @@ public:
      */
     double x;
     /**
-     * @brief Kurzzusammefassung der Funktion
-     * 
+     * @brief Kurzzusammefassung der Funktion 
      * @param eingang Funktion des Parameter
      * @return nix, aber falls...
      */

@@ -46,7 +46,7 @@
 
 \usepackage{tikz}                   % needed for TikZ drawings
 \usepackage{pgfplots}               % needed to draw graphs of functions
-\pgfplotsset{compat=1.17}	        % newest version
+\pgfplotsset{compat=1.18} % Usa la versione che hai installata
 \AtBeginEnvironment{tikzpicture}{\tracinglostchars=0\relax}
 \usepackage{circuitikz}
 
@@ -159,6 +159,21 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{shapes}
 \usetikzlibrary{calc}
+
+% DEFINIZIONE DELLO STILE PERSONALIZZATO
+\pgfplotsset{
+    tiny_trig_plot/.style={
+        width=\linewidth,       % Impone al grafico di occupare tutta la minipage
+        axis lines=middle,      % Assi cartesiani al centro
+        xmin=-3.5, xmax=3.5,    % Limiti asse X (leggermente più di -pi e pi)
+        ymin=-1.2, ymax=1.2,    % Limiti asse Y
+        xtick={-3.1415, 0, 3.1415}, 
+        xticklabels={$-\pi$, $0$, $\pi$}, % Etichette matematiche pulite
+        ytick={-1, 1},
+        tick label style={font=\tiny},
+        enlargelimits=false
+    }
+}
 
 
 % ------------------------------------ OTHER PACKAGE SETTINGS -------------------------------------

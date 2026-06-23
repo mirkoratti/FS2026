@@ -21,10 +21,18 @@
 
 	\begin{itemize}
 		\item[(a)] Schematische Darstellung des Energiebandes im Ortsraum für einen Halbleiter
-		\item[(b)] Zustandsdichte eines Halbleiters
+		\item[(b)] Zustandsdichte eines Halbleiters (sedili per livello energetico)
 		\item[(c)] Fermi-Dirac-Verteilung
 		\item[(d)] Elektronen- bzw. Lochkonzentr. als Funktion $g(E) \cdot f(E) = n_E(E) \text{ resp. } p_E(E)$
 	\end{itemize}
+
+	\medbreak
+
+Il numero totale di elettroni per unità di volume nella banda di conduzione ($n_e$) si calcola integrando il prodotto tra la densità degli stati $g_{LB}(E)$ e la probabilità di occupazione di Fermi-Dirac $f_{LB}(E)$:
+
+\begin{equation*}
+    n_{e} = \int_{E_{LB}}^{E_{LB}+\chi} n_{e}(E) \, dE = \int_{E_{LB}}^{E_{LB}+\chi} g_{LB}(E) \cdot f_{LB}(E) \, dE
+\end{equation*}
 
 \subsection{Extrinsische Halbleiter (n-, p-dotiert)}
 \begin{minipage}{0.49\linewidth}
@@ -52,10 +60,12 @@ Bei Raumtemperatur befinden sich die zusätzlichen Elektronen bereits im Leitung
 \end{minipage}
 \begin{minipage}{0.5\linewidth}
 	Wichtig für Halbleiteranwendungen ist der Bereich zwischen $T_s$ und $T_i$, 
-	da dort die Ladungsträgerkonzentration konstant und temperaturunabhängig ist.
+	da dort die \textbf{Ladungsträgerkonzentration konstant und temperaturunabhängig} ist.\smallbreak
+
+	Attenzione $\frac{1}{T}$ significa che temperature piu alte sono a sinistra nel grafico
 \end{minipage}
 
-\subsection{Schottky-Diode ($\Phi_{metall} > \Phi_n$ oder $\Phi_{metall} < \Phi_p$)}
+\subsection[Schottky-Diode]{Schottky-Diode ($\Phi_{metall} > \Phi_n$ oder $\Phi_{metall} < \Phi_p$)}
 \includegraphics[width=0.9\linewidth]{Bilder/Schottky-Diode_1}
 
 \begin{minipage}{0.5\linewidth}
@@ -83,7 +93,7 @@ Sehr \textbf{schnelle Photodioden} werden mit Schottky-Dioden realisiert.
 Durch Anlegen einer Spannung in Sperrichtung wird die innere Spannung erhöht. 
 Somit werden schneller die Elektronen-Loch-Paare getrennt und das Elektron kann schneller aus der Verarmungszone entweichen.
 
-\subsection{Ohms'scher Kontakt ($\Phi_{metall} < \Phi_n$ oder $\Phi_{metall} > \Phi_p$)}
+\subsection[Ohms'scher Kontakt]{Ohms'scher Kontakt ($\Phi_{metall} < \Phi_n$ oder $\Phi_{metall} > \Phi_p$)}
 \begin{minipage}{0.49\linewidth}
 	\includegraphics[width=0.9\linewidth]{Bilder/Ohmscher_Kontakt-before}
 \end{minipage}

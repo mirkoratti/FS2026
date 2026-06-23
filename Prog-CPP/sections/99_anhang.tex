@@ -64,10 +64,9 @@ Beim Vergleich von \texttt{double}-Werten sollte aufgrund von Rundungsfehlern \t
 der Operator \texttt{==} direkt verwendet werden}. 
 
 Stattdessen wird geprüft, ob die absolute Differenz zwischen zwei Werten kleiner als eine definierte Toleranz 
-(Epsilon) ist.\smallskip
+(Epsilon) ist.
 
 \lstinputlisting[language=C++]{code/99_anhang/99_anhang_snippet_3.cpp}
-
 
 \subsection{Parametri Template Non-Tipo (Static Allocation)}
 
@@ -105,3 +104,18 @@ Senza la risoluzione a tempo di compilazione, il compilatore non potrebbe riserv
     \item \textbf{Inlining Esplicito:} Le funzioni template definite al di fuori della classe (\textit{out-of-class}), anche se collocate nello stesso file header, \textbf{non} sono \texttt{inline} di default. Per renderle tali, la keyword \texttt{inline} deve essere inserita tra il tag \texttt{template} e il tipo di ritorno.
     \item \textbf{Vantaggi e Limiti:} L'inlining elimina l'overhead della chiamata a funzione (\textit{zero overhead}), ma è sconsigliato per funzioni ricorsive o molto complesse.
 \end{itemize}
+
+\subsection{Overloading dell'Operatore []}
+
+Per una corretta implementazione dell'operatore \texttt{[]}, è necessario definire \textbf{due versioni} per supportare sia gli oggetti modificabili che quelli costanti:
+
+\begin{itemize}
+    \item \textbf{Non-Const:} Restituisce una reference (\texttt{T\&}) per consentire la lettura e la scrittura.
+    \item \textbf{Const:} Restituisce una const reference (\texttt{const T\&}) o un valore (\texttt{T}) per garantire il solo accesso in lettura sugli oggetti \texttt{const}.
+\end{itemize}
+
+\subsubsection{Esempio Pratico}
+
+\lstinputlisting[language=c++]{code/99_anhang/operator.cpp}
+
+la versione \texttt{const} viene spesso usata se la classe (l'istanza) è \texttt{const}

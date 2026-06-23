@@ -23,10 +23,11 @@ $A_n$ und $\varphi_n$ \textrightarrow\ Addition der komplexen Amplituden
 \smallskip
 
 \renewcommand{\arraystretch}{1.5}
-\begin{tabular}{ll}
-    $A_n = \vert a_n - \jimg b_n \vert = \sqrt{a_n^2 + b_n^2}$  & ($n = 1, \, 2, \, 3, \, \ldots)$                  \\  \medskip
-    $\varphi_n = \arg(a_n \crd{-} \jimg b_n)$                         & ($n = 1, \, 2, \, 3 \, \ldots)$                   \\
-    $A_0 = \Big| \frac{a_0}{2} \Big|$                           & $\varphi_0 = \arg(a_0 - \jimg b_0) = \arg(a_0)$
+\begin{tabular}{lll}
+    $A_n = \vert a_n - \jimg b_n \vert = \sqrt{a_n^2 + b_n^2}$  & $= 2\vert c_n \vert$ & ($n = 1, \, 2, \, 3, \, \ldots)$                  \\  
+    $\varphi_n = \arg(a_n - \jimg b_n)$                         & $= \arg(c_n)$        & ($n = 1, \, 2, \, 3, \, \ldots)$                   \\
+    $\frac{1}{n} \text{ in } \arg(\dots)$                       & \multicolumn{2}{l}{può essere ignorato (modifica solo modulo)} \\
+    $A_0 = \Big| \frac{a_0}{2} \Big|$                           & $= \vert c_0 \vert$  & $\varphi_0 = \arg(a_0) = \arg(c_0)$
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
@@ -55,7 +56,7 @@ Zwei Diagramme für Betrag $\vert c_k \vert$ und Winkel $\arg(c_k)$ in jedem Pun
 \renewcommand{\arraystretch}{1.5}
 \begin{tabular}{lcl}
     $A_n = \vert a_n - \jimg b_n \vert = \vert 2 c_n \vert = 2 \vert c_n \vert$ & & $\varphi_n = \arg(a_n - \jimg b_n) = \arg(2 c_n) = \arg(c_n)$   \\
-    \textrightarrow\ $c_k = \frac{A_n}{2}$                                      & & \textrightarrow\ $\arg(c_k) = \sgn(k) \cdot \varphi_n$ 
+    $\boxed{c_k = \frac{A_n}{2}}$                                      & &  $\boxed{\arg(c_k) = \sgn(k) \cdot \varphi_n}$ 
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 

@@ -1,4 +1,3 @@
- // --- H file ---
 class Dozent {
     // La funzione amica permette l'accesso ai membri privati
     // Funzione globale
@@ -6,11 +5,9 @@ class Dozent {
 
 private:
     int numb;
-
 public:
     Dozent(int n) : numb(n) {}
 };
-
 // --- CPP file ---
 Dozent operator+(const Dozent& d1, const Dozent& d2) {
     return Dozent(d1.numb + d2.numb);

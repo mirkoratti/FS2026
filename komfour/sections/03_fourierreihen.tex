@@ -91,7 +91,7 @@ $\bm{f(t)}$\\auf dem Intervall [0 ; T)}
 \end{minipage}
 
 \smallskip
-\renewcommand{\arraystretch}{2}
+\renewcommand{\arraystretch}{2.2}
 \begin{tabular}{l|l|l}
 \textbf{Proprietà} & \multicolumn{2}{l}{\textbf{Coefficienti di Fourier}} \\ \hline
 \multirow{2}{*}{$f(t)$ gerade}   & $\displaystyle a_n = \frac{4}{T} \int_{0}^{\frac{T}{2}} f(t) \cos(n \omega_f t) dt$ & $b_n = 0$ \\
@@ -120,15 +120,15 @@ $g(t) = f(r \cdot t)$ mit $0 \neq r \in \mathbb{R}$ \qquad \crd{$\omega_g = \fra
 \qquad \qquad \cbl{c_k^{(g)} = c_{k\cdot \sgn(r)}^{(f)}}\]
 
 \subsubsection{Zeitverschiebung}
-$g(t) = f(t + t_0)$
+$g(t) = f(t + t_0)$ \qquad \qquad $A_n$ rimane invariato \textrightarrow $A_n^{(g)} = A_n^{(f)}$
 
 \smallskip
 
-\renewcommand{\arraystretch}{1.7}
+\renewcommand{\arraystretch}{1.5}
 \begin{tabular}{ll}
-    $ a_n^{(g)} = \cos(n \, \omega_f \, t_0) \cdot a_n^{(f)} + \sin(n \, \omega_f \, t_0) \cdot b_n^{(f)}$      & $n = 0$ \quad [mit $b_0 = 0, \, 1, \, 2, \, \ldots$]  \\ 
-    $ b_n^{(g)} = -\sin(n \, \omega_f \, t_0) \cdot a_n^{(f)} + \cos(n \, \omega_f \, t_0) \cdot  b_n^{(f)}$    & $n = 1, \, 2, \, 3, \, \ldots$                        \\	
-    $ \cbl{c_k^{(g)} = \e^{\jimg \, k \, \omega_f \, t_0} \cdot c_k^{(f)}}$                                     & $\cbl{k  =1, \, 2, \, 3, \, \ldots}$
+    $a_n^{(g)} = \cos(n \, \omega_f \, t_0) \cdot a_n^{(f)} + \sin(n \, \omega_f \, t_0) \cdot b_n^{(f)}$    &\qquad $n = 0, \, 1, \, 2, \, \ldots$ \\ 
+    $b_n^{(g)} = -\sin(n \, \omega_f \, t_0) \cdot a_n^{(f)} + \cos(n \, \omega_f \, t_0) \cdot b_n^{(f)}$   &\qquad $n = 1, \, 2, \, 3, \, \ldots$ \\  
+    $\cbl{c_k^{(g)} = \e^{\jimg \, k \, \omega_f \, t_0} \cdot c_k^{(f)}}$                                   &\qquad $\cbl{k \in \mathbb{Z}}$
 \end{tabular}
 \renewcommand{\arraystretch}{1}
 
@@ -194,7 +194,7 @@ stückweise monoton, so existiert eine (nur von $f$ abhängige) Konstante $\in \
 $$ \vert a_n \vert \leq \frac{c}{n^m} \quad \text{und} \quad \vert b_n \vert \leq \frac{c}{n^m} \quad (m, \, n \in \mathbb{N}) $$
 
 
-\subsubsection{Punktweise Konvergenz (Satz von Dirichlet)}
+\subsubsection{Punktweise Konvergenz (Satz von Dirichlet)}\label{chapt:punktweise_konvergenz}
 
 Wenn die linksseitige $f(t_0 - 0)$ \textbf{und} die rechtsseitige Ableitung $f(t_0 + 0)$ existieren, dann konvergiert die Fourierreihe gegen:	
 
@@ -231,6 +231,13 @@ Dies entspricht noch nicht der gesuchten Summe $S$. Es ist eine \textbf{Umformun
 $$ Q * \frac{\pi}{15} = \frac{1}{30} + \underbrace{\frac{1}{5} + \frac{1}{7}+ \ldots}_{S} \qquad \underrightarrow{\text{auflösen nach }S} \qquad
 \bm{S = -\frac{1}{30}} $$
 % Ende Code Fabian Steiner
+
+\begin{itemize}
+    \item Attenzione: se \crd{Q \textrightarrow $f(t)$ si trova in una \textbf{sprungstelle}}, usare punto medio (\ref{chapt:punktweise_konvergenz})
+    \item RICORDARSI, in $\FR()$ il primo coefficente è $\dfrac{a_0}{\crd{\mathbf{2}}}$ 
+\end{itemize}
+
+
 
 
 \subsection{Gibbs'sches Phänomen}

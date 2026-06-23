@@ -26,65 +26,53 @@
     $\sin(-a) = -\sin(a)$                                                               & $\cos(-a) = \cos(a)$          \\
     $\sin(\pi - a) = \sin(a)$                                                           & $\cos(\pi -a) = - \cos(a)$    \\		
     $\sin(\pi + a) = -\sin(a)$                                                          & $\cos(\pi + a) = - \cos(a)$   \\	
-    $\sin \Big( \frac{\pi}{2} - a \Big) = \sin \Big( \frac{\pi}{2} + a \Big) = \cos(a)$ & $\cos \Big( \frac{\pi}{2} - a \Big) = - \cos \Big( \frac{\pi}{2} + a \Big) = \sin(a)$		 
+    $\sin \Big( \frac{\pi}{2} - a \Big) = \sin \Big( \frac{\pi}{2} + a \Big) = \cos(a)$ & $\cos \Big( \frac{\pi}{2} - a \Big) = - \cos \Big( \frac{\pi}{2} + a \Big) = \sin(a)$\\
+    $\sin \Big( a - \frac{\pi}{2} \Big) = -\cos(a)$                                     & $\cos \Big( a - \frac{\pi}{2} \Big) = \sin(a)$ \\
+    $\tan(-\alpha) = -\tan(\alpha)$ & \cor{$\arctan$ restituisce solo angoli $\in [-\pi, \pi]$!}
 \end{tabular}
-\renewcommand{\arraystretch}{1}
 
 
 \subsubsection{Additionstheoreme}
 
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{l}
-    $\sin(a \pm b) = \sin(a) \cdot \cos(b) \pm \cos(a) \cdot \sin(b)$           \\
-    $\cos(a \pm b) = \cos(a) \cdot \cos(b) \mp \sin(a) \cdot \sin(b) $          \\
-    $\tan(a \pm b) = \frac{\tan(a) \pm \tan(b)}{1 \mp \tan(a) \cdot \tan(b)}$
+\begin{tabular}{ll}
+    $\sin(a \pm b) = \sin(a) \cdot \cos(b) \pm \cos(a) \cdot \sin(b)$   & $\tan(a \pm b) = \frac{\tan(a) \pm \tan(b)}{1 \mp \tan(a) \cdot \tan(b)}$        \\
+    $\cos(a \pm b) = \cos(a) \cdot \cos(b) \mp \sin(a) \cdot \sin(b) $  & 
 \end{tabular}
-\renewcommand{\arraystretch}{1}
 
 
 \subsubsection{Summen und Differenzen}
 
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{l}
+\begin{tabular}{ll}
     $\sin(a) + \sin(b) = 2 \cdot \sin \Big( \frac{a+b}{2} \Big) \cdot \cos \Big( \frac{a-b}{2} \Big)$   \\
     $\sin(a) - \sin(b) = 2 \cdot \sin \Big( \frac{a-b}{2} \Big) \cdot \cos \Big( \frac{a+b}{2} \Big)$   \\
     $\cos(a) + \cos(b) = 2 \cdot \cos \Big( \frac{a+b}{2} \Big) \cdot \cos \Big( \frac{a-b}{2} \Big)$   \\
     $\cos(a) - \cos(b) = -2 \cdot \sin \Big( \frac{a+b}{2} \Big) \cdot \sin \Big( \frac{a-b}{2} \Big)$  \\
     $\tan(a) \pm \tan(b) = \frac{\sin(a \pm b)}{\cos(a) \cdot \cos(b)}$ 
 \end{tabular}
-\renewcommand{\arraystretch}{1}
 
 
 \subsubsection{Produkte}
 
-\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{l}
     $\sin(a) \cdot \sin(b) = \frac{1}{2} \big( \cos(a-b) - \cos(a+b) \big) $ \\
     $\cos(a) \cdot \cos(b) = \frac{1}{2} \big( \cos(a-b) + \cos(a+b) \big) $ \\	
     $\sin(a) \cdot \cos(b) = \frac{1}{2} \big( \sin(a-b) + \sin(a+b) \big) $ \\
     $\cos(a) \cdot \sin(b) = \frac{1}{2} \left( \sin(b - a) + \sin(b + a) \right)$
 \end{tabular}
-\renewcommand{\arraystretch}{1}
 
 
 \subsubsection{Winkelvielfache und Halbwinkel}
 
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{l}
-    $\sin(2a) = 2 \, \sin(a) \cdot \cos(a)$                                 \\
-    $\sin(3a) = 3 \, \sin(a) -4 \, \sin^3(a)$                               \\ \medskip
-    $\sin(4a) = 8 \, \cos^3(a) \cdot \sin(a) - 4 \, \cos(a) \cdot \sin(a)$  \\
-    $\cos(2a) = \cos^2(a) - \sin^2(a)$                                      \\
-    $\cos(3a) = 4 \, \cos^3(a) -3 \, \cos(a)$                               \\  \medskip 
-    $\cos(4a) = 8 \, \cos^4(a) - 8 \, \cos^2(a) + 1$                        \\
-    $\sin \Big( \frac{a}{2} \Big) = \sqrt{\frac{1}{2} \big(1-\cos(a) \big)} \qquad \cos \Big( \frac{a}{2} \Big) = \sqrt{\frac{1}{2} \big(1+\cos(a) \big)}$ 
+\begin{tabular}{ll}
+    $\sin(2a) = 2 \, \sin(a) \cdot \cos(a)$                                 & $\cos(2a) = \cos^2(a) - \sin^2(a)$ \\
+    $\sin(3a) = 3 \, \sin(a) -4 \, \sin^3(a)$                               & $\cos(3a) = 4 \, \cos^3(a) -3 \, \cos(a)$\\ \medskip
+    $\sin(4a) = 8 \, \cos^3(a) \sin(a) - 4 \, \cos(a) \sin(a)$              & $\cos(4a) = 8 \, \cos^4(a) - 8 \, \cos^2(a) + 1$\\
+    $\sin \Big( \frac{a}{2} \Big) = \sqrt{\frac{1}{2} \big(1-\cos(a) \big)}$& $\cos \Big( \frac{a}{2} \Big) = \sqrt{\frac{1}{2} \big(1+\cos(a) \big)}$
 \end{tabular}
-\renewcommand{\arraystretch}{1}
 
 
 \subsubsection{Potenzen}
 
-\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{ll}
     $\sin^2(a) = \frac{1}{2} \big(1-\cos(2a) \big)$                   & $\cos^2(a) = \frac{1}{2} \big(1+\cos(2a) \big)$                     \\	
     $\sin^3(a) = \frac{1}{4} \big(3\, \sin(a) - \sin(3a) \big)$       & $\cos^3(a) = \frac{1}{4} \big(\cos(3a) + 3 \, \cos(a) \big)$        \\	
@@ -122,6 +110,18 @@
     $\sin\left(n\frac{\pi}{4}\right) = \begin{cases} 0 & n = 4k \\ 1 & n = 8k+2 \\ -1 & n = 8k+6 \\ \frac{\sqrt{2}}{2} & n = 8k+1, 8k+3 \\ -\frac{\sqrt{2}}{2} & n = 8k+5, 8k+7 \end{cases}$ \\
     \noalign{\vspace{0.15cm}}
     $e^{\pm\jimg n\frac{\pi}{4}} = \left(\frac{\sqrt{2}}{2} \pm \jimg\frac{\sqrt{2}}{2}\right)^n$ & 
+\end{tabular}
+\end{center}
+
+% --- Casi con potenze di j e (-j) (2 Colonne compatto) ---
+\noindent\textbf{Potenze di $\jimg$ e $-\jimg$ ($n \in \mathbb{Z}$, con $k \in \mathbb{Z}$):}
+\begin{center}
+\begin{tabular}{ll}
+    $\jimg^n = \begin{cases} 1 & n = 4k \\ \jimg & n = 4k+1 \\ -1 & n = 4k+2 \\ -\jimg & n = 4k+3 \end{cases}$ & 
+    $(-\jimg)^n = \begin{cases} 1 & n = 4k \\ -\jimg & n = 4k+1 \\ -1 & n = 4k+2 \\ \jimg & n = 4k+3 \end{cases}$ \\
+    \noalign{\vspace{0.15cm}}
+    $\jimg^{-n} = (-\jimg)^n$ & 
+    $(-\jimg)^{-n} = \jimg^n$
 \end{tabular}
 \end{center}
 
@@ -169,10 +169,58 @@
     \begin{align*}
         x_{1,2}             &= \frac{-b \crd{\pm} \sqrt{b^2 - 4ac}}{2a} \text{ \crd{reell}} \\
         \left(a+b\right)^n  &= \sum\limits_{k=0}^n \binom{n}{k} \, a^{n-k} \cdot b^k        \\
-        \binom{n}{k}        &= \frac{n!}{k!\left(n-k\right)!}
     \end{align*}
 \end{minipage}
 
+\vspace{-1em}
+% --- RIGA 1: SENO e COSENO con etichette integrate ---
+\begin{minipage}[t]{0.48\columnwidth}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\linewidth, axis lines=middle,
+            xmin=-3.5, xmax=4.2, ymin=-1.3, ymax=1.3,
+            xtick={-3.14, 0, 3.14}, xticklabels={$-\pi$, $0$, $\pi$},
+            ytick={-1, 1}, tick label style={font=\tiny}
+        ]
+            % sin(x) - Base
+            \addplot[domain=-pi:pi, samples=40, color=blue, thick] {sin(deg(x))}
+                node[right, pos=0.9, font=\tiny] {$\sin x$};
+            
+            % sin(2x) - Compresso
+            \addplot[domain=-pi:pi, samples=60, color=blue!60!cyan, dashed, thick] {sin(deg(2*x))}
+                node[above, pos=0.75, font=\tiny] {$\sin 2x$};
+            
+            % sin(0.5x) - Dilatato
+            \addplot[domain=-pi:pi, samples=30, color=blue!50!black, dotted, thick] {sin(deg(0.5*x))}
+                node[below right, pos=0.95, font=\tiny] {$\sin 0.5x$};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\columnwidth}
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\linewidth, axis lines=middle,
+            xmin=-3.5, xmax=4.2, ymin=-1.3, ymax=1.3,
+            xtick={-3.14, 0, 3.14}, xticklabels={$-\pi$, $0$, $\pi$},
+            ytick={-1, 1}, tick label style={font=\tiny}
+        ]
+            % cos(x) - Base
+            \addplot[domain=-pi:pi, samples=40, color=red, thick] {cos(deg(x))}
+                node[above, pos=0.9, font=\tiny] {$\cos x$};
+            
+            % cos(2x) - Compresso
+            \addplot[domain=-pi:pi, samples=60, color=red!60!orange, dashed, thick] {cos(deg(2*x))}
+                node[below, pos=0.33, font=\tiny] {$\cos 2x$};
+            
+            % cos(0.5x) - Dilatato
+            \addplot[domain=-pi:pi, samples=30, color=red!50!black, dotted, thick] {cos(deg(0.5*x))}
+                node[right, pos=0.5, font=\tiny] {$\cos 0.5x$};
+        \end{axis}
+    \end{tikzpicture}
+\end{minipage}
 
 \subsection{Transformationen von Funktionen}	
 
@@ -278,20 +326,23 @@ Quando $f(t)$ è simmetrica rispetto a un punto traslato $t_0$, i coefficienti s
 
 \smallbreak
 
-\paragraph{Test del punto di simmetria:}
-Sostituire $t = t_0$ nell'argomento di coseno e seno:
-\begin{itemize}
-    \item \textbf{Se $f(t)$ è PARI rispetto a $t_0$}:
+\paragraph{Test del punto di simmetria}
+Sostituire $t = t_0$ nell'argomento di coseno e seno:\smallbreak
+
+\begin{minipage}{0.45\columnwidth}
+    \textbf{Se $f(t)$ è PARI rispetto a $t_0$}:
     \begin{itemize}
         \item $a_n = 0 \iff \cos(n\omega_f \cdot \cor{t_0}) = 0$
         \item $b_n = 0 \iff \sin(n\omega_f \cdot \cor{t_0}) = 0$
     \end{itemize}
-    \item \textbf{Se $f(t)$ è DISPARI rispetto a $t_0$}:
+\end{minipage}\hfill
+\begin{minipage}{0.45\columnwidth}
+    \textbf{Se $f(t)$ è DISPARI rispetto a $t_0$}:
     \begin{itemize}
-        \item $a_n = 0 \iff \cos(n\omega_f \cdot \cor{t_0}) = \pm 1$ (picco $\rightarrow$ pari rispetto a $\cor{t_0}$)
-        \item $b_n = 0 \iff \sin(n\omega_f \cdot \cor{t_0}) = \pm 1$ (picco $\rightarrow$ pari rispetto a $\cor{t_0}$)
+        \item $a_n = 0 \iff \cos(n\omega_f \cdot \cor{t_0}) = \pm 1$ 
+        \item $b_n = 0 \iff \sin(n\omega_f \cdot \cor{t_0}) = \pm 1$ 
     \end{itemize}
-\end{itemize}
+\end{minipage}
 
 \subsection[Lokale Transformationen]{Lokale Transformationen (Spezialfälle di $f'(z)$):}
 \label{chap:lokale_transformationen}
@@ -300,4 +351,13 @@ Sostituire $t = t_0$ nell'argomento di coseno e seno:
     \item $f'(z) = \jimg \quad \textrightarrow$ \textbf{Reine Drehung}, Drehwinkel $= \frac{\pi}{2}$
     \item $f'(z) = -\jimg \quad \textrightarrow$ \textbf{Reine Drehung}, Drehwinkel $= -\frac{\pi}{2}$ (o $\frac{3\pi}{2}$)
     \item $f'(z) = c \in \mathbb{R}^+ \quad \textrightarrow$ \textbf{Reine Streckung} Streckfaktor $= c$
+\end{itemize}
+
+\subsection[Convergenza coefficenti]{Convergenza coefficenti ($n \rightarrow \infty$)}
+\textbf{Regola generale (Velocità di decrescita):} La velocità con cui i coefficienti $a_n, b_n, c_n$ tendono a $0$ dipende dalla \textbf{regolarità} della funzione $f(t)$.
+\begin{itemize}
+        \item $\mathbf{\sim \frac{1}{n}}$: Funzione \textbf{discontinua} (es. onde quadre, segnali a gradino con salti finiti).
+        \item $\mathbf{\sim \frac{1}{n^2}}$: Funzione \textbf{continua} ma con derivata prima discontinua (es. onda triangolare, punti angolosi).
+        \item $\mathbf{\sim \frac{1}{n^3}}$: Funzione con derivata prima continua, ma derivata seconda discontinua.
+        \item Se la funzione è derivabile $k$ volte con continuità, i coefficienti decrescono come $\frac{1}{n^{k+1}}$.
 \end{itemize}

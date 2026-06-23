@@ -212,11 +212,10 @@ il programma viene interrotto se la condizione all'interno di \texttt{assert()} 
 \paragraph{Messaggio di interruzione programma}
 
 \begin{lstlisting}
-<nome_file>:<linea>: <scope>::<nome_funzione>(<tipi_parametri>): Assertion '<condizione_logica>' failed.
+<nome eseguibile><nome_file>:<linea>: <scope>::<nome_funzione>(<tipi_parametri>): Assertion '<condizione_logica>' failed.
 
 // Esempio concreto (es. Classe Torus): // 
-
-torus.cpp:12: Torus::Torus(double, double): Assertion 'smallR > 0.0 && smallR < bigR' failed.
+torus:torus.cpp:12: Torus::Torus(double, double): Assertion 'smallR > 0.0 && smallR < bigR' failed.
 \end{lstlisting}
 
 \section{This-Pointer}
@@ -324,8 +323,9 @@ und Methoden} der Klasse, ohne selbst Teil der Klasse (Methode) zu sein.
 
 \lstinputlisting{code/03_Objektorientierung/operator_overloading_global.cpp}
 
-\textbf{Beispiel I/O Streams (\lstinline[language=C++]|<<|):}\\
-Damit Verkettungen wie \verb|cout << a << b;| funktionieren, muss als Rückgabewert eine Referenz auf den \verb|ostream| geliefert werden (\verb|return os;|).
+\textbf{Beispiel I/O Streams (\lstinline[language=C++]|<<|):} (\crd{\texttt{\#include <iostream>}})\\
+Damit Verkettungen wie \verb|cout << a << b;| funktionieren, muss als Rückgabewert eine 
+Referenz auf den \verb|ostream| geliefert werden
 \lstinputlisting[language=C++]{code/03_Objektorientierung/03_Objektorientierung_snippet_1.cpp}
 
 \subsubsection{Operatoren und Typumwandlungen}
@@ -423,8 +423,8 @@ Wird eine Vererbung private durchgeführt, sind keine Attribute oder Methoden me
     \item \textbf{Regola di Priorità:} Gli elementi della classe base devono essere \textbf{sempre inizializzati per primi}.
     \item \textbf{Invocazione Implicita vs Esplicita:} Se il costruttore della classe 
     figlio non chiama esplicitamente un costruttore della classe padre tramite la 
-    \textit{initializer list}, il compilatore invocherà automaticamente il 
-    \textbf{costruttore di default} della classe padre. Se invece si desidera utilizzare un costruttore specifico (ad esempio con parametri), questo deve essere richiamato esplicitamente.
+    \textit{initializer list}, \crd{il compilatore invocherà automaticamente il 
+    \textbf{costruttore di default} della classe padre.} Se invece si desidera utilizzare un costruttore specifico (ad esempio con parametri), questo deve essere richiamato esplicitamente.
 \end{itemize}
 
 \columnbreak
@@ -435,7 +435,10 @@ Wird eine Vererbung private durchgeführt, sind keine Attribute oder Methoden me
 \begin{itemize}
     \item \textbf{Ordine Inverso:} I distruttori vengono eseguiti nell'ordine esattamente opposto ai costruttori.
     \item \textbf{Ordine di Esecuzione:} Dal basso verso l'alto (Sottoclasse $\rightarrow$ Classe Base).
-    \item \textbf{Generazione e Chiamata Automatica:} Anche se il distruttore non viene definito esplicitamente nella classe figlio, il compilatore ne genera automaticamente uno implicito. In ogni caso, dopo aver eseguito il corpo del distruttore della classe figlio, il compilatore chiama \textbf{sempre e automaticamente} il distruttore della classe padre.
+    \item \textbf{Generazione e Chiamata Automatica:} Anche se il distruttore non viene 
+    definito esplicitamente nella classe figlio, il compilatore ne genera automaticamente 
+    uno implicito. In ogni caso, dopo aver eseguito il corpo del distruttore della classe 
+    figlio, il compilatore chiama \crd{\textbf{sempre e automaticamente} il distruttore della classe padre.}
 \end{itemize}
 
 \subsection{Überschreiben von Methoden}
@@ -598,7 +601,7 @@ Static im Zusammenhang mit Klassen bindet eine Methode oder ein Attribut an die 
 Static Methoden müssen im Header-File deklariert und im Cpp-File definiert werden. 
 Sie dürfen nur auf Static definierte Attribute zugreifen da \textbf{keine Objektinstanz vorhanden.} 
 Hauptanwendungen sind Hilfsfunktionen wie Funktionsaufrufcounter oder Umrechnungsfunktionen. 
-Bei der Deklaration wird der Klassennamen verwendet (siehe Bsp). 
+Bei der Deklaration wird der Klassennamen verwendet (siehe Bsp). \crd{(this-pointer nicht übergeben)}
 
 \subsubsection{Attribute}
 
