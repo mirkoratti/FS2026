@@ -59,7 +59,7 @@ Rappresenta lo standard moderno. Combina la sintassi concisa di \texttt{printf} 
 
 \lstinputlisting[language=c++]{code/99_anhang/method_chaining.cpp}
 
-\subsection{Vergleich von Gleitkommazahlen (double)}
+\subsubsection{Vergleich von Gleitkommazahlen (double)}
 Beim Vergleich von \texttt{double}-Werten sollte aufgrund von Rundungsfehlern \textbf{niemals 
 der Operator \texttt{==} direkt verwendet werden}. 
 
@@ -90,10 +90,7 @@ Senza la risoluzione a tempo di compilazione, il compilatore non potrebbe riserv
 \textbf{Memoria}        & Stack (Veloce, fissa)   & Heap (Flessibile, lenta) \\ \hline
 \textbf{Gestione}       & Automatica (No memory leaks) & Manuale (\texttt{new}/\texttt{delete}) \\ \hline
 \textbf{Effetto Tipo}   & \texttt{Class<10>} $\neq$ \texttt{Class<20>} & Il tipo rimane identico \\ \hline
-\end{tabular}}
-
-\subsubsection{Esempio e Default}
-È possibile impostare un valore di default per rendere il parametro opzionale.
+\end{tabular}}\vspace{1em}
 
 \lstinputlisting[language=C++]{code/99_anhang/99_anhang_snippet_4.cpp}
 
@@ -119,3 +116,49 @@ Per una corretta implementazione dell'operatore \texttt{[]}, è necessario defin
 \lstinputlisting[language=c++]{code/99_anhang/operator.cpp}
 
 la versione \texttt{const} viene spesso usata se la classe (l'istanza) è \texttt{const}
+
+\subsection{Wichtige Prüfungsfallen (Trappole da Esame)}
+
+\subsubsection{Array di Puntatori e Destruktor}
+Su un array di puntatori (es. \texttt{Typ** data}), \texttt{delete[] data;} elimina solo il contenitore. Usa sempre un ciclo per deallocare i singoli oggetti ed evitare \textit{memory leaks}:
+\begin{lstlisting}[language=C++]
+for(int i = 0; i < groesse; ++i) { 
+    delete data[i]; 
+}
+delete[] data;
+\end{lstlisting}
+
+\subsubsection{Default-Parameter}
+I valori di default vanno definiti \textbf{esclusivamente nel file .h}. Ripeterli nel \texttt{.cpp} causa un errore di compilazione.
+
+\subsubsection{Binding e Polimorfismo in C++}
+\begin{itemize}
+    \item \textbf{Chiamata diretta su oggetto} (es. \texttt{Derivata d; d.metodo();}): Nessuna ambiguità. Viene sempre risolto a compile-time (Static Binding) ed esegue il metodo della classe specifica dell'oggetto.
+    \item \textbf{Chiamata tramite puntatore/reference alla classe Base} (es. \texttt{Base* p = new Derivata();}), spesso 
+    succede nelle \cor{liste polimorfiche}:
+    \begin{itemize}
+        \item \textbf{Metodo NON \texttt{virtual} (Static/Early Binding):} La scelta del metodo dipende dal \textit{tipo del puntatore}. Verrà eseguito il metodo di \texttt{Base}.
+        \item \textbf{Metodo \texttt{virtual} (Dynamic/Late Binding):} La scelta del metodo dipende dall'\textit{oggetto reale} instanziato in memoria a runtime. Verrà eseguito il metodo di \texttt{Derivata}.
+    \end{itemize}
+\end{itemize}
+
+\subsection{Keyword esclusive della dichiarazione (.h)}
+
+\resizebox{\columnwidth}{!}{
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lccc}
+    \hline
+    \textbf{Keyword} & \textbf{\texttt{.h}} & \textbf{\texttt{.cpp}} & \textbf{Motivo } \\
+    \hline
+    \texttt{static} & \checkmark & \textbf{NO} & Evita conflitti linkage\\
+    \texttt{virtual} & \checkmark & \textbf{NO} & La v-table definita nell'interfaccia \\
+    Parametri default & \checkmark & \textbf{NO} & Previene ambiguità \\
+    \texttt{friend} & \checkmark & \textbf{NO} & Non parte della firma della funzione \\
+    \texttt{explicit} & \checkmark & \textbf{NO} & direttiva di design per il compilatore \\
+    \hline
+\end{tabular}}
+
+\subsection{Esempio Completo Stack}
+
+\lstinputlisting[language=c++]{code/99_anhang/Stack.h}
+\lstinputlisting[language=c++]{code/99_anhang/StackException.h}

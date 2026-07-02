@@ -305,7 +305,7 @@ Se non viene trovato alcun handler nel \textit{Call Stack}:
 \subsection{noexcept}
 \begin{itemize}
     \item \textbf{noexcept:} Introdotto con C++11, indica che una funzione garantisce di non lanciare eccezioni. È utile per l'ottimizzazione del compilatore.
-    \item \textbf{Operatore noexcept(expr):} Restituisce \texttt{true} se l'espressione è specificata come \texttt{noexcept}.
+    \item \textbf{Operatore noexcept(expr):} \cor{(valutato a compile time)} Restituisce \texttt{true} se l'espressione è specificata come \texttt{noexcept}.
 \end{itemize}
 
 \lstinputlisting[language=C++]{code/04_Memorymanagement/noexcept.cpp}\vspace{-1em}

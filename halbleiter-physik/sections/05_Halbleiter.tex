@@ -34,6 +34,23 @@ Il numero totale di elettroni per unità di volume nella banda di conduzione ($n
     n_{e} = \int_{E_{LB}}^{E_{LB}+\chi} n_{e}(E) \, dE = \int_{E_{LB}}^{E_{LB}+\chi} g_{LB}(E) \cdot f_{LB}(E) \, dE
 \end{equation*}
 
+In einem Halbleiter tragen \textbf{sowohl Elektronen als auch Löcher zur Leitfähigkeit bei}, 
+da sie sich im elektrischen Feld in entgegengesetzte Richtungen bewegen und sich ihre 
+Ströme somit addieren
+
+\begin{minipage}[b]{0.65\columnwidth}
+
+	Elektronendichte ist immer exakt gleich der Lochdichte ($n_e = n_h$). Im thermischen Gleichgewicht sind diese Dichten über das \textbf{Massenwirkungsgesetz} gekoppelt:
+	$$ n_e \cdot n_h = n_{\text{intrinsisch}}^2 = C \cdot e^{-\frac{E_{\text{Gap}}}{k_B T}} $$
+	\subsubsection{Spannung}
+	In einem Halbleiter können sich die Elektronen
+	nicht verschieben, da die Zustandsdichte an der Fermikante = 0 ist	
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.3\columnwidth}
+	\includegraphics[width=\columnwidth]{Bilder/intrinsische_spannung.png}
+\end{minipage}
+
 \subsection{Extrinsische Halbleiter (n-, p-dotiert)}
 \begin{minipage}{0.49\linewidth}
 	n-dotiert:
@@ -53,6 +70,16 @@ In extrinsischen Halbleiter ersetzt man im Si-Kristall einzelne Atome.
 \textbf{p-dotierte} Halbleiter durch Einsetzen von Atomen mit einem \textbf{fehlenden} Elektron. 
 Die Konzentration von Dotierungsatomen ist sehr klein, nur etwa jedes $10^6$-te Atom wird ersetzt. 
 Bei Raumtemperatur befinden sich die zusätzlichen Elektronen bereits im Leitungsband.
+
+Die Leitfähigkeit wird durch das gezielte Einbringen von Fremdatomen (Dotierung) dominiert. Das Massenwirkungsgesetz ($n_e \cdot n_h = n_i^2$) gilt im thermischen Gleichgewicht weiterhin.
+
+\begin{itemize}
+    \item \textbf{n-Dotierung:} Donatoren liefern zusätzliche freie Elektronen. Elektronen sind die Majoritätsladungsträger:
+    $ n_e \approx N_D \quad \text{(Donatorendichte)} $
+    
+    \item \textbf{p-Dotierung:} Akzeptoren erzeugen zusätzliche Löcher. Löcher sind die Majoritätsladungsträger:
+    $ n_h \approx N_A \quad \text{(Akzeptorendichte)} $
+\end{itemize}
 
 \subsection{Temperaturabhängigkeit}
 \begin{minipage}{0.5\linewidth}

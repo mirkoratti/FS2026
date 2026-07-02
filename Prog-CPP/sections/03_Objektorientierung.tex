@@ -375,9 +375,6 @@ Die Oberklasse, Baisklasse oder Superklasse \texttt{vererbt} an eine Unterklasse
 Bei der Vererbung werden immer \textbf{alle} Attribute oder Methoden weitergegeben. 
 
 \subsubsection{UML}
-
-In einem UML Diagramm wird vererbung wie folgt dargestellt:\\
-\noindent
 \begin{minipage}{0.6\columnwidth}
     \input{tikz/uml.tex}
 \end{minipage}\hfill
@@ -582,12 +579,14 @@ Bei der Definition einer Klasse können weitere Oberklassen mit einem Komma getr
     \item \textbf{La Soluzione (\textit{Virtual Inheritance})}:la parola 
     chiave \texttt{virtual} nelle classi intermedie (\texttt{C2} e \texttt{C3})
     istruisce il compilatore a creare un'unica istanza condivisa di \texttt{C1}.
-    \item \textbf{Ordine di Inizializzazione}: Segue una priorità gerarchica:
+    \item \textbf{\color{red}Ordine di Inizializzazione}: Segue una priorità gerarchica:
     \begin{enumerate}
         \item \textbf{Base Virtuale}: \texttt{C1} viene inizializzata per prima.
         \item \textbf{Basi Non-Virtuali}: \texttt{C2} e poi \texttt{C3} (seguendo l'ordine di dichiarazione in \texttt{C4}).
         \item \textbf{Classe Derivata}: Il corpo del costruttore di \texttt{C4}.
     \end{enumerate}
+    \item Per i distruttori viene eseguito l'ordine inverso: \texttt{C4 -> C3 -> C2 -> C1}\\
+        Per doppia eredità da destra a sinistra
 \end{itemize}
 
 \lstinputlisting[language=C++]{code/03_Objektorientierung/03_Objektorientierung_snippet_3.cpp}
