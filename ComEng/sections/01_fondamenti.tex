@@ -7,8 +7,6 @@
 \section{Instruction Set Architecture (ISA)}
 \label{subsec:isa_differences}
 
-L'evoluzione delle architetture ARM ha portato alla coesistenza di diversi set di istruzioni.
-
 \begin{itemize}
     \item \textbf{ARM (32-bit) (Obsoleto):} 32 bit, massime prestazioni ma occupano maggior spazio in memoria.
     \item \textbf{Thumb (16-bit):} sottoinsieme 16 bit,
@@ -20,17 +18,9 @@ L'evoluzione delle architetture ARM ha portato alla coesistenza di diversi set d
 \end{itemize}
 
 \section{Logica della ALU e Program Status Register}
-\label{sec:alu_logic}
-
-L'Unità Aritmetico-Logica (ALU) opera esclusivamente su stringhe binarie di bit, 
-ignorando la semantica del segno (interpretazione \textit{signed} vs \textit{unsigned}).
-
-\subsection{Meccanismo delle Flag (APSR)}
-\label{subsec:apsr_flags}
-
 \begin{itemize}
-    \item \textbf{N (Negative):} Riflette il bit più significativo (MSB) del risultato. Se $MSB=1$, la flag è impostata a 1.
-    \item \textbf{Z (Zero):} Impostata a 1 se tutti i bit del risultato sono pari a zero.
+    \item \textbf{N (Negative):} Se $MSB=1$, la flag è impostata a 1.
+    \item \textbf{Z (Zero):} tutti i bit del risultato sono pari a zero.
     \item \textbf{C (Carry):} Indica un riporto oltre il bit più significativo. 
 \begin{itemize}
     \item Fondamentale per operazioni \textit{unsigned}. \crd{Invertito per la sottrazione!}

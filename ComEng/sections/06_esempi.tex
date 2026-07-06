@@ -66,12 +66,23 @@
 \end{center}
 
 \begin{enumerate}
-    \item \textbf{Controllo dei limiti (Bound Check):} Verifica iniziale del valore di \texttt{State} per saltare subito al \texttt{default} se l'indice è fuori range.
-    \item \textbf{Calcolo dell'offset:} Moltiplicazione del valore per 4 ($State \ll 2$) tramite shift logico, poiché ogni puntatore nella look-up table occupa 32 bit (4 byte).
-    \item \textbf{Recupero del puntatore:} Lettura dell'indirizzo di destinazione esatto sommando l'offset calcolato all'indirizzo base della tabella.
-    \item \textbf{Salto (Branch):} Caricamento dell'indirizzo recuperato nel Program Counter (\texttt{PC}) per avviare l'esecuzione del caso specifico.
+    \item \textbf{Controllo limiti:} Verifica valore di \texttt{State} per saltare subito al \texttt{default} se l'indice è fuori range.
+    \item \textbf{Calcolo offset:} Moltiplicazione del valore per 4 ($State \ll 2$) tramite shift logico, poiché ogni puntatore nella look-up table occupa 32 bit (4 byte).
+    \item \textbf{Recupero puntatore:} Lettura dell'indirizzo di destinazione esatto sommando l'offset calcolato all'indirizzo base della tabella.
+    \item \textbf{Branch:} avviare l'esecuzione del caso specifico.
 \end{enumerate}
 
-\includegraphics[width=0.9\linewidth]{images/microprocessor.png}
 
-% \lstinputlisting[style=armasmstyle]{code/extension.s}
+\includegraphics[width=0.75\linewidth]{images/microprocessor.png}
+
+\begin{minipage}{0.6\linewidth}
+    \includegraphics[width = \linewidth]{images/duales_alu.png}
+    \hrule
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}{0.3\linewidth}
+    \rotatebox{90}{%
+    \includegraphics[width = 1.7\linewidth]{images/isr_priorities_2.png}}
+\end{minipage}
+
+\includegraphics[width = 0.9\linewidth]{images/isr_priorities.png}
